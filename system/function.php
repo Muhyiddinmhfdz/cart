@@ -67,11 +67,11 @@ function processing($kontent)
     
 }
 
-function lastid()
+function lastid($coloumn,$table,$kategori)
 {
     include "koneksi.php";
 
-    $result = mysqli_query($konek,"SELECT max(id_training) FROM data_training WHERE kategori='1'");
+    $result = mysqli_query($konek,"SELECT max($coloumn) FROM $table WHERE kategori='$kategori'");
 
     // if (!$result) {
     //     die('Could not query:' . mysql_error());
@@ -80,6 +80,31 @@ function lastid()
     $id =mysqli_fetch_array($result);
     return $id[0];
 }
+
+function kat_olahraga($idtraining)
+{
+    include "koneksi.php";
+
+    // $result = mysqli_query($konek,"SELECT * FROM tbindex WHERE kategori_id='1' AND DocId='$idtraining' LIMIT 3 ORDER BY 'Count' Desc ");
+
+    // $id =mysqli_fetch_array($result);
+    // $id=mysqli_error($result);
+    $query="(SELECT * FROM tbindex WHERE kategori_id='1' AND DocId='$idtraining' ORDER BY Count DESC)LIMIT 3";
+    if (!mysqli_query($konek,$query)) {
+        echo("Error description: " . mysqli_error($konek));
+    }
+    else{
+        $result = mysqli_query($konek,$query);
+        $res =mysqli_fetch_all($result);
+    }
+
+    foreach($res as $res) {
+        $query="INSERT INTO kategoriolahraga (id_datatraining, id_tbindex, keyword) VALUES ($idtraining, '$res[0]', '$res[1]')";
+        mysqli_query($konek,$query);
+    }
+    return $res;
+}
+
 //fungsi untuk membuat index
 function buatindex($id) {
        include "koneksi.php";

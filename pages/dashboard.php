@@ -211,8 +211,11 @@ if (isset($_POST['uploadTraining'])) {
         'kategori' => $_POST['kategori']
     ];
     $input_data = upload("data_training", $arraytopost);
-    $last_id=lastid("data_training",$_POST['kategori']);
-    buatindex(lastid());
+    // $last_id=lastid("data_training",$_POST['kategori']);
+    buatindex(lastid("id_training","data_training",$_POST['kategori']));
+    if($_POST['kategori']==1){
+        kat_olahraga(lastid("id_training","data_training",$_POST['kategori']));
+    }
     // echo $_POST['isi'];
     
     echo $input_data == true ? "<script>$(document).ready(function(){ success('Upload') });</script>" : "<script>$(document).ready(function(){ gagal('Upload')});</script>";

@@ -57,11 +57,21 @@
                         echo "<td>" . $key['konten'] . "</td>";
                         echo "<td>" . $key['text_proses'] . "</td>";
                         echo "<td>" . $key['namakategori'] . "</td>";
+                        if($key['kategori']==1){
+                            $sql="INNER JOIN `data_training` ON kategoriolahraga.id_datatraining=data_training.id_training WHERE id_datatraining=".$key['id_training']."";
+                            $data_keyword = getrow("kategoriolahraga",$sql);
+                        }
+                        echo "<td>";
+                        foreach ($data_keyword as $keyword) {
+                            echo $keyword['keyword'].'<br>';
+                        }
+                        echo "</td>";
+                        
                     //     echo '<td>
                     // <a href="#" data-id="' . $key['id_training'] . '" data-table="data_training" data-toggle="modal" data-target="#edit_data" class="btn btn-info btn-sm"><i class="material-icons">edit</i></a>
                     //         <a id="delete" href="?delete_training=' . $key['id_training'] . '" class="btn btn-danger btn-sm"><i class="material-icons">delete_forever</i></a>
                     //       </td>';
-                    //     echo "</tr>";
+                        echo "</tr>";
                     }
                 }
                 // var_dump($data_train)
