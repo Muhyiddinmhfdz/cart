@@ -215,6 +215,19 @@ if (isset($_POST['uploadTraining'])) {
     buatindex(lastid("id_training","data_training",$_POST['kategori']));
     if($_POST['kategori']==1){
         kat_olahraga(lastid("id_training","data_training",$_POST['kategori']));
+        hitungbobotolahraga();
+    }
+    if($_POST['kategori']==2){
+        kat_pendidikan(lastid("id_training","data_training",$_POST['kategori']));
+        hitungbobotpendidikan();
+    }
+    if($_POST['kategori']==3){
+        kat_teknologi(lastid("id_training","data_training",$_POST['kategori']));
+        hitungbobotteknologi();
+    }
+    if($_POST['kategori']==4){
+        kat_pemerintahan(lastid("id_training","data_training",$_POST['kategori']));
+        hitungbobotpemerintahan();
     }
     // echo $_POST['isi'];
     

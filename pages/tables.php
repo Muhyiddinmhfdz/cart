@@ -61,6 +61,18 @@
                             $sql="INNER JOIN `data_training` ON kategoriolahraga.id_datatraining=data_training.id_training WHERE id_datatraining=".$key['id_training']."";
                             $data_keyword = getrow("kategoriolahraga",$sql);
                         }
+                        if($key['kategori']==2){
+                            $sql="INNER JOIN `data_training` ON kategoripendidikan.id_datatraining=data_training.id_training WHERE id_datatraining=".$key['id_training']."";
+                            $data_keyword = getrow("kategoripendidikan",$sql);
+                        }
+                        if($key['kategori']==3){
+                            $sql="INNER JOIN `data_training` ON kategoriteknologi.id_datatraining=data_training.id_training WHERE id_datatraining=".$key['id_training']."";
+                            $data_keyword = getrow("kategoriteknologi",$sql);
+                        }
+                        if($key['kategori']==4){
+                            $sql="INNER JOIN `data_training` ON kategoripemerintahan.id_datatraining=data_training.id_training WHERE id_datatraining=".$key['id_training']."";
+                            $data_keyword = getrow("kategoripemerintahan",$sql);
+                        }
                         echo "<td>";
                         foreach ($data_keyword as $keyword) {
                             echo $keyword['keyword'].'<br>';

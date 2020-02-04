@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 04, 2020 at 01:04 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.1
+-- Waktu pembuatan: 04 Feb 2020 pada 16.17
+-- Versi server: 10.4.11-MariaDB
+-- Versi PHP: 7.2.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `data_test`
+-- Struktur dari tabel `data_test`
 --
 
 CREATE TABLE `data_test` (
@@ -37,7 +37,7 @@ CREATE TABLE `data_test` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `data_test`
+-- Dumping data untuk tabel `data_test`
 --
 
 INSERT INTO `data_test` (`id_test`, `konten`, `text_proses`, `kategori`, `kategori_aktual`) VALUES
@@ -108,7 +108,7 @@ INSERT INTO `data_test` (`id_test`, `konten`, `text_proses`, `kategori`, `katego
 -- --------------------------------------------------------
 
 --
--- Table structure for table `data_training`
+-- Struktur dari tabel `data_training`
 --
 
 CREATE TABLE `data_training` (
@@ -119,17 +119,17 @@ CREATE TABLE `data_training` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `data_training`
+-- Dumping data untuk tabel `data_training`
 --
 
 INSERT INTO `data_training` (`id_training`, `konten`, `text_proses`, `kategori`) VALUES
-(1, 'Barcelona dinilai Pep Guardiola masih layak ditakuti di level Eropa kendati\r\nsudah beberapa musim terakhir tidak juara Liga Champions. Musim 2014/2015\r\n jadi terakhir kalinya Barcelona menjuarai Liga Champions saat merangkai treble\r\n dengan juga memenangi Liga Spanyol dan Copa del Rey. Neymar dipastikan tetap absen di tiga laga kompetisi Eropa musim\r\n depan, apapun klubnya nanti, setelah banding Paris St. Germain \r\nuntuk hukumannya ditolak UEFA. Neymar mendapat skorsing tersebut \r\nseiring unggahan kata-kata kasar terhadap ofisial pertandingan di \r\nmedia sosial, saat PSG disingkirkan Manchester United di 16 besar\r\n Liga Champions 2018/19.', 'barcelona dinilai pep guardiola layak ditakuti level eropa kendati sudah musim juara liga champions musim 2014 2015 kalinya barcelona menjuarai liga champions merangkai treble memenangi liga spanyol copa del rey neymar absen laga kompetisi eropa musim depan apapun klubnya nanti banding paris st germain untuk hukumannya ditolak uefa neymar skorsing seiring unggahan kata-kata kasar ofisial pertandingan media sosial psg disingkirkan manchester united di 16 besar liga champions 2018 19', '1'),
-(2, 'Ancaman sepi penonton membayangi final Liga Europa antara \r\nChelsea melawan Arsenal, seiring blunder UEFA dalam hal penunjukkan \r\nlokasi final serta alokasi tiket. Sampai saat ini permasalahan soal tiket \r\ndan akomodasi menuju venue final di Baku Olympic Stadium masih \r\nbelum teratasi.  Chelsea dibawa Sarri memenangi Liga Europa usai mengalahkan \r\nArsenal 4-1 di Baku Olympic Stadium, Kamis (30/5) dinihari WIB. \r\nEmpat gol itu didapatkan dari Olivier Giroud, Pedro Rodriguez, \r\ndan Eden Hazard (2 gol). Dengan keberhasilan tersebut, Chelsea \r\nmenjalani musim yang relatif bagus secara keseluruhan.', 'ancaman sepi penonton membayangi final liga europa chelsea melawan arsenal seiring blunder uefa penunjukkan lokasi final alokasi tiket permasalahan tiket dan akomodasi venue final baku olympic stadium belum teratasi chelsea dibawa sarri memenangi liga europa mengalahkan arsenal 4-1 baku olympic stadium kamis 30 5 dinihari wib empat gol didapatkan olivier giroud pedro rodriguez dan eden hazard 2 gol keberhasilan tersebut chelsea menjalani musim relatif bagus keseluruhan', '1');
+(1, 'Wartabola.id – Dua pemain terbaru Marc Klok dan Marco Motta megikuti latihan perdana bersama Persija di lapangan ABC, Senayan, Jakarta pada hari Senin(03/02) kemarin. Kedua pemain asing ini, dipantau langsung oleh Stefano Impagliazzo untuk dilihat kebugaran mereka.\r\n\r\nAsisten pelatih Rodrigo Pellegrino merasa senang dengan kedatang Klok serta Motta. Karena keduanya memiliki kualitas serta pengalaman. Klok sendiri telah tiga tahun berada di Indonesia sedangkan Motta pernah berlaga di AS Roma dan Juventus.\r\n\r\n“Mereka memulai seperti pemanasan dan setelah itu berlatih bersama Coach Stefano untuk dilihat kondisi fisik mereka. Setelah ini mereka baru bisa ikut latihan normal seperti pemain lainnya,” ujar Pellegrino dikutip dari halaman resmi PSSI.\r\n\r\nIa juga menilai, keputusan Persija untuk merekrut Klok dan Motta sudah bagus untuk bermain di Timnas Indonesia. Apalagi sebelumnya Macan Kemayoran juga banyak merekrut pemain-pemain lokal yang tidak kalah bagus.', 'wartabola id main baru marc klok marco motta megikuti latih perdana persija lapang abc senayan jakarta senin 03 02 kemarin main asing ini pantau langsung stefano impagliazzo bugar mereka asisten latih rodrigo pellegrino senang datang klok motta milik kualitas alam klok indonesia motta laga as roma juventus mereka panas latih coach stefano kondisi fisik mereka latih normal main lain pellegrino kutip halaman resmi pssi ia nilai putus persija rekrut klok dan motta bagus untuk main di timnas indonesia macan mayor rekrut main lokal kalah bagus', '1'),
+(2, 'Persija Jakarta masih cukup aktif dalam pergerakan busa transfer Liga 1 2020. Setelah terdengar kabar mereka akan mengambil eks pemain Juventus, dikatakan mereka juga akan mendatangkan pemain top dunia asal Jepang, Keisuke Honda.\r\n\r\nRencana transfer tersebut telah diakui oleh CEO Persija Jakarta, Ferry Paulus. Saat ini pihak manajemen tengah menjalin komunikasi dengan pihak Honda untuk menjalin kesempatan transfer.\r\n\r\n“Memang kami sedang berinteraksi dengan beberapa pemain dan Honda masuk kedalam daftar kami,” ujar Ferry dikutip dari Indosport.com.\r\n\r\nMemang belum kepastian, namun proses untuk pedekatan Persija kepada Honda perlu disimak. Karena pemain asal Jepang itu memiliki reputasi yang cukup medunia dan salah satunya pernah membela klub top Series A Italia, AC Milan.\r\n\r\nSetelah di lepas klub Belanda, Vitesse pada 1 Januari 2020 kemarin, Honda saat ini statusnya sedang menganggur. Kalau negosiasinya berujung kata sepakat, Honda otomatis bergabung Persija secara bebas transfer alias gratis.\r\n\r\nBergabungnya Honda akan menghasilkan dua rekor sekaligus. Yaitu komposisi skuat PErsija untuk musim depan.Kedua, ia juga akan menjadi pemain termahal Persija Jakarta di Liga 1 2020.\r\n\r\nSejauh ini pemain termahal mereka adalah Marko Simic yang menyentuh angka 550 ribu euro (Rp 8,3 miliar). Sedangkan Honda, harganya menurut Transfermarkt berada di angka 1 juta euro (Rp 15,2 miliar) dan bisa dibilang dua kali lipat lebih banyak kebanding Simic.', 'persija jakarta aktif gera busa transfer liga 1 2020 dengar kabar ambil eks main juventus main top dunia jepang keisuke honda rencana transfer aku ceo persija jakarta ferry paulus manajemen jalin komunikasi honda jalin sempat transfer memang interaksi main honda masuk dalam daftar kami ferry kutip indosport com memang pasti proses dekat persija honda simak main jepang milik reputasi medunia salah satu bela klub top series a italia ac mil telah lepas klub belanda vitesse 1 januari 2020 kemarin honda status anggur negosiasi ujung sepakat honda otomatis gabung persija bebas transfer alias gratis gabung honda hasil rekor sekaligus komposisi skuat persija musim depan dua akan main mahal persija jakarta liga 1 2020 jauh main mahal marko simic sentuh angka 550 ribu euro rp 8 3 miliar honda harga transfermarkt angka 1 juta euro rp 15 2 miliar bilang kali lipat banding simic', '1');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kategori`
+-- Struktur dari tabel `kategori`
 --
 
 CREATE TABLE `kategori` (
@@ -138,7 +138,7 @@ CREATE TABLE `kategori` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `kategori`
+-- Dumping data untuk tabel `kategori`
 --
 
 INSERT INTO `kategori` (`idkategori`, `namakategori`) VALUES
@@ -150,7 +150,7 @@ INSERT INTO `kategori` (`idkategori`, `namakategori`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kategoriolahraga`
+-- Struktur dari tabel `kategoriolahraga`
 --
 
 CREATE TABLE `kategoriolahraga` (
@@ -161,21 +161,60 @@ CREATE TABLE `kategoriolahraga` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `kategoriolahraga`
+-- Dumping data untuk tabel `kategoriolahraga`
 --
 
 INSERT INTO `kategoriolahraga` (`id`, `id_datatraining`, `id_tbindex`, `keyword`) VALUES
-(1, 1, 13, 'liga'),
-(2, 1, 14, 'champions'),
-(3, 1, 11, 'musim'),
-(4, 2, 64, 'final'),
-(5, 2, 67, 'chelsea'),
-(6, 2, 66, 'europa');
+(1, 1, 3, 'main'),
+(2, 1, 6, 'klok'),
+(3, 1, 8, 'motta'),
+(4, 2, 84, 'honda'),
+(5, 2, 65, 'persija'),
+(6, 2, 78, 'main');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `stopword`
+-- Struktur dari tabel `kategoripemerintahan`
+--
+
+CREATE TABLE `kategoripemerintahan` (
+  `id` int(11) NOT NULL,
+  `id_datatraining` int(5) NOT NULL,
+  `id_tbindex` int(5) NOT NULL,
+  `keyword` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `kategoripendidikan`
+--
+
+CREATE TABLE `kategoripendidikan` (
+  `id` int(11) NOT NULL,
+  `id_datatraining` int(5) NOT NULL,
+  `id_tbindex` int(5) NOT NULL,
+  `keyword` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `kategoriteknologi`
+--
+
+CREATE TABLE `kategoriteknologi` (
+  `id` int(11) NOT NULL,
+  `id_datatraining` int(5) NOT NULL,
+  `id_tbindex` int(5) NOT NULL,
+  `keyword` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `stopword`
 --
 
 CREATE TABLE `stopword` (
@@ -183,7 +222,7 @@ CREATE TABLE `stopword` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `stopword`
+-- Dumping data untuk tabel `stopword`
 --
 
 INSERT INTO `stopword` (`stopword`) VALUES
@@ -2464,7 +2503,7 @@ INSERT INTO `stopword` (`stopword`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbindex`
+-- Struktur dari tabel `tbindex`
 --
 
 CREATE TABLE `tbindex` (
@@ -2477,196 +2516,285 @@ CREATE TABLE `tbindex` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbindex`
+-- Dumping data untuk tabel `tbindex`
 --
 
 INSERT INTO `tbindex` (`Id`, `Term`, `DocId`, `kategori_id`, `Count`, `Bobot`) VALUES
-(1, 'barcelona', 1, 1, 2, 0),
-(2, 'dinilai', 1, 1, 1, 0),
-(3, 'pep', 1, 1, 1, 0),
-(4, 'guardiola', 1, 1, 1, 0),
-(5, 'layak', 1, 1, 1, 0),
-(6, 'ditakuti', 1, 1, 1, 0),
-(7, 'level', 1, 1, 1, 0),
-(8, 'eropa', 1, 1, 2, 0),
-(9, 'kendati', 1, 1, 1, 0),
-(10, 'sudah', 1, 1, 1, 0),
-(11, 'musim', 1, 1, 3, 0),
-(12, 'juara', 1, 1, 1, 0),
-(13, 'liga', 1, 1, 4, 0),
-(14, 'champions', 1, 1, 3, 0),
-(15, '2014', 1, 1, 1, 0),
-(16, '2015', 1, 1, 1, 0),
-(17, 'kalinya', 1, 1, 1, 0),
-(18, 'menjuarai', 1, 1, 1, 0),
-(19, 'merangkai', 1, 1, 1, 0),
-(20, 'treble', 1, 1, 1, 0),
-(21, 'memenangi', 1, 1, 1, 0),
-(22, 'spanyol', 1, 1, 1, 0),
-(23, 'copa', 1, 1, 1, 0),
-(24, 'del', 1, 1, 1, 0),
-(25, 'rey', 1, 1, 1, 0),
-(26, 'neymar', 1, 1, 2, 0),
-(27, 'absen', 1, 1, 1, 0),
-(28, 'laga', 1, 1, 1, 0),
-(29, 'kompetisi', 1, 1, 1, 0),
-(30, 'depan', 1, 1, 1, 0),
-(31, 'apapun', 1, 1, 1, 0),
-(32, 'klubnya', 1, 1, 1, 0),
-(33, 'nanti', 1, 1, 1, 0),
-(34, 'banding', 1, 1, 1, 0),
-(35, 'paris', 1, 1, 1, 0),
-(36, 'st', 1, 1, 1, 0),
-(37, 'germain', 1, 1, 1, 0),
-(38, 'untuk', 1, 1, 1, 0),
-(39, 'hukumannya', 1, 1, 1, 0),
-(40, 'ditolak', 1, 1, 1, 0),
-(41, 'uefa', 1, 1, 1, 0),
-(42, 'skorsing', 1, 1, 1, 0),
-(43, 'seiring', 1, 1, 1, 0),
-(44, 'unggahan', 1, 1, 1, 0),
-(45, 'kata-kata', 1, 1, 1, 0),
-(46, 'kasar', 1, 1, 1, 0),
-(47, 'ofisial', 1, 1, 1, 0),
-(48, 'pertandingan', 1, 1, 1, 0),
-(49, 'media', 1, 1, 1, 0),
-(50, 'sosial', 1, 1, 1, 0),
-(51, 'psg', 1, 1, 1, 0),
-(52, 'disingkirkan', 1, 1, 1, 0),
-(53, 'manchester', 1, 1, 1, 0),
-(54, 'united', 1, 1, 1, 0),
-(55, 'di', 1, 1, 1, 0),
-(56, '16', 1, 1, 1, 0),
-(57, 'besar', 1, 1, 1, 0),
-(58, '2018', 1, 1, 1, 0),
-(59, '19', 1, 1, 1, 0),
-(60, 'ancaman', 2, 1, 1, 0),
-(61, 'sepi', 2, 1, 1, 0),
-(62, 'penonton', 2, 1, 1, 0),
-(63, 'membayangi', 2, 1, 1, 0),
-(64, 'final', 2, 1, 3, 0),
-(65, 'liga', 2, 1, 2, 0),
-(66, 'europa', 2, 1, 2, 0),
-(67, 'chelsea', 2, 1, 3, 0),
-(68, 'melawan', 2, 1, 1, 0),
-(69, 'arsenal', 2, 1, 2, 0),
-(70, 'seiring', 2, 1, 1, 0),
-(71, 'blunder', 2, 1, 1, 0),
-(72, 'uefa', 2, 1, 1, 0),
-(73, 'penunjukkan', 2, 1, 1, 0),
-(74, 'lokasi', 2, 1, 1, 0),
-(75, 'alokasi', 2, 1, 1, 0),
-(76, 'tiket', 2, 1, 2, 0),
-(77, 'permasalahan', 2, 1, 1, 0),
-(78, 'dan', 2, 1, 2, 0),
-(79, 'akomodasi', 2, 1, 1, 0),
-(80, 'venue', 2, 1, 1, 0),
-(81, 'baku', 2, 1, 2, 0),
-(82, 'olympic', 2, 1, 2, 0),
-(83, 'stadium', 2, 1, 2, 0),
-(84, 'belum', 2, 1, 1, 0),
-(85, 'teratasi', 2, 1, 1, 0),
-(86, 'dibawa', 2, 1, 1, 0),
-(87, 'sarri', 2, 1, 1, 0),
-(88, 'memenangi', 2, 1, 1, 0),
-(89, 'mengalahkan', 2, 1, 1, 0),
-(90, '4-1', 2, 1, 1, 0),
-(91, 'kamis', 2, 1, 1, 0),
-(92, '30', 2, 1, 1, 0),
-(93, '5', 2, 1, 1, 0),
-(94, 'dinihari', 2, 1, 1, 0),
-(95, 'wib', 2, 1, 1, 0),
-(96, 'empat', 2, 1, 1, 0),
-(97, 'gol', 2, 1, 2, 0),
-(98, 'didapatkan', 2, 1, 1, 0),
-(99, 'olivier', 2, 1, 1, 0),
-(100, 'giroud', 2, 1, 1, 0),
-(101, 'pedro', 2, 1, 1, 0),
-(102, 'rodriguez', 2, 1, 1, 0),
-(103, 'eden', 2, 1, 1, 0),
-(104, 'hazard', 2, 1, 1, 0),
-(105, '2', 2, 1, 1, 0),
-(106, 'keberhasilan', 2, 1, 1, 0),
-(107, 'tersebut', 2, 1, 1, 0),
-(108, 'menjalani', 2, 1, 1, 0),
-(109, 'musim', 2, 1, 1, 0),
-(110, 'relatif', 2, 1, 1, 0),
-(111, 'bagus', 2, 1, 1, 0),
-(112, 'keseluruhan', 2, 1, 1, 0);
+(1, 'wartabola', 1, 1, 1, 5.10595),
+(2, 'id', 1, 1, 1, 5.10595),
+(3, 'main', 1, 1, 5, 22.064),
+(4, 'baru', 1, 1, 1, 5.10595),
+(5, 'marc', 1, 1, 1, 5.10595),
+(6, 'klok', 1, 1, 4, 20.4238),
+(7, 'marco', 1, 1, 1, 5.10595),
+(8, 'motta', 1, 1, 4, 20.4238),
+(9, 'megikuti', 1, 1, 1, 5.10595),
+(10, 'latih', 1, 1, 4, 20.4238),
+(11, 'perdana', 1, 1, 1, 5.10595),
+(12, 'persija', 1, 1, 2, 8.8256),
+(13, 'lapang', 1, 1, 1, 5.10595),
+(14, 'abc', 1, 1, 1, 5.10595),
+(15, 'senayan', 1, 1, 1, 5.10595),
+(16, 'jakarta', 1, 1, 1, 4.4128),
+(17, 'senin', 1, 1, 1, 5.10595),
+(18, '03', 1, 1, 1, 5.10595),
+(19, '02', 1, 1, 1, 5.10595),
+(20, 'kemarin', 1, 1, 1, 4.4128),
+(21, 'asing', 1, 1, 1, 5.10595),
+(22, 'ini', 1, 1, 1, 5.10595),
+(23, 'pantau', 1, 1, 1, 5.10595),
+(24, 'langsung', 1, 1, 1, 5.10595),
+(25, 'stefano', 1, 1, 2, 10.2119),
+(26, 'impagliazzo', 1, 1, 1, 5.10595),
+(27, 'bugar', 1, 1, 1, 5.10595),
+(28, 'mereka', 1, 1, 3, 15.3178),
+(29, 'asisten', 1, 1, 1, 5.10595),
+(30, 'rodrigo', 1, 1, 1, 5.10595),
+(31, 'pellegrino', 1, 1, 2, 10.2119),
+(32, 'senang', 1, 1, 1, 5.10595),
+(33, 'datang', 1, 1, 1, 5.10595),
+(34, 'milik', 1, 1, 1, 4.4128),
+(35, 'kualitas', 1, 1, 1, 5.10595),
+(36, 'alam', 1, 1, 1, 5.10595),
+(37, 'indonesia', 1, 1, 2, 10.2119),
+(38, 'laga', 1, 1, 1, 5.10595),
+(39, 'as', 1, 1, 1, 5.10595),
+(40, 'roma', 1, 1, 1, 5.10595),
+(41, 'juventus', 1, 1, 1, 4.4128),
+(42, 'panas', 1, 1, 1, 5.10595),
+(43, 'coach', 1, 1, 1, 5.10595),
+(44, 'kondisi', 1, 1, 1, 5.10595),
+(45, 'fisik', 1, 1, 1, 5.10595),
+(46, 'normal', 1, 1, 1, 5.10595),
+(47, 'lain', 1, 1, 1, 5.10595),
+(48, 'kutip', 1, 1, 1, 4.4128),
+(49, 'halaman', 1, 1, 1, 5.10595),
+(50, 'resmi', 1, 1, 1, 5.10595),
+(51, 'pssi', 1, 1, 1, 5.10595),
+(52, 'ia', 1, 1, 1, 5.10595),
+(53, 'nilai', 1, 1, 1, 5.10595),
+(54, 'putus', 1, 1, 1, 5.10595),
+(55, 'rekrut', 1, 1, 2, 10.2119),
+(56, 'dan', 1, 1, 1, 5.10595),
+(57, 'bagus', 1, 1, 2, 10.2119),
+(58, 'untuk', 1, 1, 1, 5.10595),
+(59, 'di', 1, 1, 1, 5.10595),
+(60, 'timnas', 1, 1, 1, 5.10595),
+(61, 'macan', 1, 1, 1, 5.10595),
+(62, 'mayor', 1, 1, 1, 5.10595),
+(63, 'lokal', 1, 1, 1, 5.10595),
+(64, 'kalah', 1, 1, 1, 5.10595),
+(65, 'persija', 2, 1, 6, 26.4768),
+(66, 'jakarta', 2, 1, 3, 13.2384),
+(67, 'aktif', 2, 1, 1, 5.10595),
+(68, 'gera', 2, 1, 1, 5.10595),
+(69, 'busa', 2, 1, 1, 5.10595),
+(70, 'transfer', 2, 1, 4, 20.4238),
+(71, 'liga', 2, 1, 2, 10.2119),
+(72, '1', 2, 1, 4, 20.4238),
+(73, '2020', 2, 1, 3, 15.3178),
+(74, 'dengar', 2, 1, 1, 5.10595),
+(75, 'kabar', 2, 1, 1, 5.10595),
+(76, 'ambil', 2, 1, 1, 5.10595),
+(77, 'eks', 2, 1, 1, 5.10595),
+(78, 'main', 2, 1, 6, 26.4768),
+(79, 'juventus', 2, 1, 1, 4.4128),
+(80, 'top', 2, 1, 2, 10.2119),
+(81, 'dunia', 2, 1, 1, 5.10595),
+(82, 'jepang', 2, 1, 2, 10.2119),
+(83, 'keisuke', 2, 1, 1, 5.10595),
+(84, 'honda', 2, 1, 8, 40.8476),
+(85, 'rencana', 2, 1, 1, 5.10595),
+(86, 'aku', 2, 1, 1, 5.10595),
+(87, 'ceo', 2, 1, 1, 5.10595),
+(88, 'ferry', 2, 1, 2, 10.2119),
+(89, 'paulus', 2, 1, 1, 5.10595),
+(90, 'manajemen', 2, 1, 1, 5.10595),
+(91, 'jalin', 2, 1, 2, 10.2119),
+(92, 'komunikasi', 2, 1, 1, 5.10595),
+(93, 'sempat', 2, 1, 1, 5.10595),
+(94, 'memang', 2, 1, 2, 10.2119),
+(95, 'interaksi', 2, 1, 1, 5.10595),
+(96, 'masuk', 2, 1, 1, 5.10595),
+(97, 'dalam', 2, 1, 1, 5.10595),
+(98, 'daftar', 2, 1, 1, 5.10595),
+(99, 'kami', 2, 1, 1, 5.10595),
+(100, 'kutip', 2, 1, 1, 4.4128),
+(101, 'indosport', 2, 1, 1, 5.10595),
+(102, 'com', 2, 1, 1, 5.10595),
+(103, 'pasti', 2, 1, 1, 5.10595),
+(104, 'proses', 2, 1, 1, 5.10595),
+(105, 'dekat', 2, 1, 1, 5.10595),
+(106, 'simak', 2, 1, 1, 5.10595),
+(107, 'milik', 2, 1, 1, 4.4128),
+(108, 'reputasi', 2, 1, 1, 5.10595),
+(109, 'medunia', 2, 1, 1, 5.10595),
+(110, 'salah', 2, 1, 1, 5.10595),
+(111, 'satu', 2, 1, 1, 5.10595),
+(112, 'bela', 2, 1, 1, 5.10595),
+(113, 'klub', 2, 1, 2, 10.2119),
+(114, 'series', 2, 1, 1, 5.10595),
+(115, 'a', 2, 1, 1, 5.10595),
+(116, 'italia', 2, 1, 1, 5.10595),
+(117, 'ac', 2, 1, 1, 5.10595),
+(118, 'mil', 2, 1, 1, 5.10595),
+(119, 'telah', 2, 1, 1, 5.10595),
+(120, 'lepas', 2, 1, 1, 5.10595),
+(121, 'belanda', 2, 1, 1, 5.10595),
+(122, 'vitesse', 2, 1, 1, 5.10595),
+(123, 'januari', 2, 1, 1, 5.10595),
+(124, 'kemarin', 2, 1, 1, 4.4128),
+(125, 'status', 2, 1, 1, 5.10595),
+(126, 'anggur', 2, 1, 1, 5.10595),
+(127, 'negosiasi', 2, 1, 1, 5.10595),
+(128, 'ujung', 2, 1, 1, 5.10595),
+(129, 'sepakat', 2, 1, 1, 5.10595),
+(130, 'otomatis', 2, 1, 1, 5.10595),
+(131, 'gabung', 2, 1, 2, 10.2119),
+(132, 'bebas', 2, 1, 1, 5.10595),
+(133, 'alias', 2, 1, 1, 5.10595),
+(134, 'gratis', 2, 1, 1, 5.10595),
+(135, 'hasil', 2, 1, 1, 5.10595),
+(136, 'rekor', 2, 1, 1, 5.10595),
+(137, 'sekaligus', 2, 1, 1, 5.10595),
+(138, 'komposisi', 2, 1, 1, 5.10595),
+(139, 'skuat', 2, 1, 1, 5.10595),
+(140, 'musim', 2, 1, 1, 5.10595),
+(141, 'depan', 2, 1, 1, 5.10595),
+(142, 'dua', 2, 1, 1, 5.10595),
+(143, 'akan', 2, 1, 1, 5.10595),
+(144, 'mahal', 2, 1, 2, 10.2119),
+(145, 'jauh', 2, 1, 1, 5.10595),
+(146, 'marko', 2, 1, 1, 5.10595),
+(147, 'simic', 2, 1, 2, 10.2119),
+(148, 'sentuh', 2, 1, 1, 5.10595),
+(149, 'angka', 2, 1, 2, 10.2119),
+(150, '550', 2, 1, 1, 5.10595),
+(151, 'ribu', 2, 1, 1, 5.10595),
+(152, 'euro', 2, 1, 2, 10.2119),
+(153, 'rp', 2, 1, 2, 10.2119),
+(154, '8', 2, 1, 1, 5.10595),
+(155, '3', 2, 1, 1, 5.10595),
+(156, 'miliar', 2, 1, 2, 10.2119),
+(157, 'harga', 2, 1, 1, 5.10595),
+(158, 'transfermarkt', 2, 1, 1, 5.10595),
+(159, 'juta', 2, 1, 1, 5.10595),
+(160, '15', 2, 1, 1, 5.10595),
+(161, '2', 2, 1, 1, 5.10595),
+(162, 'bilang', 2, 1, 1, 5.10595),
+(163, 'kali', 2, 1, 1, 5.10595),
+(164, 'lipat', 2, 1, 1, 5.10595),
+(165, 'banding', 2, 1, 1, 5.10595);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `data_test`
+-- Indeks untuk tabel `data_test`
 --
 ALTER TABLE `data_test`
   ADD PRIMARY KEY (`id_test`);
 
 --
--- Indexes for table `data_training`
+-- Indeks untuk tabel `data_training`
 --
 ALTER TABLE `data_training`
   ADD PRIMARY KEY (`id_training`);
 
 --
--- Indexes for table `kategori`
+-- Indeks untuk tabel `kategori`
 --
 ALTER TABLE `kategori`
   ADD PRIMARY KEY (`idkategori`);
 
 --
--- Indexes for table `kategoriolahraga`
+-- Indeks untuk tabel `kategoriolahraga`
 --
 ALTER TABLE `kategoriolahraga`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `stopword`
+-- Indeks untuk tabel `kategoripemerintahan`
+--
+ALTER TABLE `kategoripemerintahan`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `kategoripendidikan`
+--
+ALTER TABLE `kategoripendidikan`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `kategoriteknologi`
+--
+ALTER TABLE `kategoriteknologi`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `stopword`
 --
 ALTER TABLE `stopword`
   ADD KEY `stopword` (`stopword`);
 
 --
--- Indexes for table `tbindex`
+-- Indeks untuk tabel `tbindex`
 --
 ALTER TABLE `tbindex`
   ADD PRIMARY KEY (`Id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `data_test`
+-- AUTO_INCREMENT untuk tabel `data_test`
 --
 ALTER TABLE `data_test`
   MODIFY `id_test` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
--- AUTO_INCREMENT for table `data_training`
+-- AUTO_INCREMENT untuk tabel `data_training`
 --
 ALTER TABLE `data_training`
   MODIFY `id_training` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `kategori`
+-- AUTO_INCREMENT untuk tabel `kategori`
 --
 ALTER TABLE `kategori`
   MODIFY `idkategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `kategoriolahraga`
+-- AUTO_INCREMENT untuk tabel `kategoriolahraga`
 --
 ALTER TABLE `kategoriolahraga`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `tbindex`
+-- AUTO_INCREMENT untuk tabel `kategoripemerintahan`
+--
+ALTER TABLE `kategoripemerintahan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT untuk tabel `kategoripendidikan`
+--
+ALTER TABLE `kategoripendidikan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT untuk tabel `kategoriteknologi`
+--
+ALTER TABLE `kategoriteknologi`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT untuk tabel `tbindex`
 --
 ALTER TABLE `tbindex`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=166;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
