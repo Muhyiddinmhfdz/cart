@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 03 Feb 2020 pada 16.04
--- Versi server: 10.4.11-MariaDB
--- Versi PHP: 7.2.26
+-- Generation Time: Feb 04, 2020 at 01:04 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `data_test`
+-- Table structure for table `data_test`
 --
 
 CREATE TABLE `data_test` (
@@ -37,7 +37,7 @@ CREATE TABLE `data_test` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `data_test`
+-- Dumping data for table `data_test`
 --
 
 INSERT INTO `data_test` (`id_test`, `konten`, `text_proses`, `kategori`, `kategori_aktual`) VALUES
@@ -108,7 +108,7 @@ INSERT INTO `data_test` (`id_test`, `konten`, `text_proses`, `kategori`, `katego
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `data_training`
+-- Table structure for table `data_training`
 --
 
 CREATE TABLE `data_training` (
@@ -119,18 +119,17 @@ CREATE TABLE `data_training` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `data_training`
+-- Dumping data for table `data_training`
 --
 
 INSERT INTO `data_training` (`id_training`, `konten`, `text_proses`, `kategori`) VALUES
-(1, 'Liverpool makin kokoh di puncak klasemen usai meraih kemenangan 2-1 atas Wolves pada pekan ke-24 Liga Inggris.', 'liverpool kokoh puncak klasemen raih menang 2-1 wolves pekan ke-24 liga inggris', '1'),
-(2, 'Liverpool sukses melanjutkan catatan kemenangannya di Liga Inggris setelah berhasil menekuk tuan rumah Wolverhampton Wanderers di Stadion Molineux pada Jumat (24/1) dengan skor 2-1.', 'liverpool sukses lanjut catat menang liga inggris hasil tekuk tuan rumah wolverhampton wanderers stadion molineux jumat 24 1 skor 2-1', '1'),
-(3, 'Liverpool makin kokoh di puncak klasemen usai meraih kemenangan 2-1 atas Wolves pada pekan ke-24 Liga Inggris. Liverpool sukses melanjutkan catatan kemenangannya di Liga Inggris setelah berhasil menekuk tuan rumah Wolverhampton Wanderers di Stadion Molineux pada Jumat (24/1) dengan skor 2-1.', 'liverpool kokoh puncak klasemen raih menang 2-1 wolves pekan ke-24 liga inggris liverpool sukses lanjut catat menang liga inggris hasil tekuk tuan rumah wolverhampton wanderers stadion molineux jumat 24 1 skor 2-1', '1');
+(1, 'Barcelona dinilai Pep Guardiola masih layak ditakuti di level Eropa kendati\r\nsudah beberapa musim terakhir tidak juara Liga Champions. Musim 2014/2015\r\n jadi terakhir kalinya Barcelona menjuarai Liga Champions saat merangkai treble\r\n dengan juga memenangi Liga Spanyol dan Copa del Rey. Neymar dipastikan tetap absen di tiga laga kompetisi Eropa musim\r\n depan, apapun klubnya nanti, setelah banding Paris St. Germain \r\nuntuk hukumannya ditolak UEFA. Neymar mendapat skorsing tersebut \r\nseiring unggahan kata-kata kasar terhadap ofisial pertandingan di \r\nmedia sosial, saat PSG disingkirkan Manchester United di 16 besar\r\n Liga Champions 2018/19.', 'barcelona dinilai pep guardiola layak ditakuti level eropa kendati sudah musim juara liga champions musim 2014 2015 kalinya barcelona menjuarai liga champions merangkai treble memenangi liga spanyol copa del rey neymar absen laga kompetisi eropa musim depan apapun klubnya nanti banding paris st germain untuk hukumannya ditolak uefa neymar skorsing seiring unggahan kata-kata kasar ofisial pertandingan media sosial psg disingkirkan manchester united di 16 besar liga champions 2018 19', '1'),
+(2, 'Ancaman sepi penonton membayangi final Liga Europa antara \r\nChelsea melawan Arsenal, seiring blunder UEFA dalam hal penunjukkan \r\nlokasi final serta alokasi tiket. Sampai saat ini permasalahan soal tiket \r\ndan akomodasi menuju venue final di Baku Olympic Stadium masih \r\nbelum teratasi.  Chelsea dibawa Sarri memenangi Liga Europa usai mengalahkan \r\nArsenal 4-1 di Baku Olympic Stadium, Kamis (30/5) dinihari WIB. \r\nEmpat gol itu didapatkan dari Olivier Giroud, Pedro Rodriguez, \r\ndan Eden Hazard (2 gol). Dengan keberhasilan tersebut, Chelsea \r\nmenjalani musim yang relatif bagus secara keseluruhan.', 'ancaman sepi penonton membayangi final liga europa chelsea melawan arsenal seiring blunder uefa penunjukkan lokasi final alokasi tiket permasalahan tiket dan akomodasi venue final baku olympic stadium belum teratasi chelsea dibawa sarri memenangi liga europa mengalahkan arsenal 4-1 baku olympic stadium kamis 30 5 dinihari wib empat gol didapatkan olivier giroud pedro rodriguez dan eden hazard 2 gol keberhasilan tersebut chelsea menjalani musim relatif bagus keseluruhan', '1');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kategori`
+-- Table structure for table `kategori`
 --
 
 CREATE TABLE `kategori` (
@@ -139,7 +138,7 @@ CREATE TABLE `kategori` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `kategori`
+-- Dumping data for table `kategori`
 --
 
 INSERT INTO `kategori` (`idkategori`, `namakategori`) VALUES
@@ -151,7 +150,7 @@ INSERT INTO `kategori` (`idkategori`, `namakategori`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kategoriolahraga`
+-- Table structure for table `kategoriolahraga`
 --
 
 CREATE TABLE `kategoriolahraga` (
@@ -161,10 +160,22 @@ CREATE TABLE `kategoriolahraga` (
   `keyword` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `kategoriolahraga`
+--
+
+INSERT INTO `kategoriolahraga` (`id`, `id_datatraining`, `id_tbindex`, `keyword`) VALUES
+(1, 1, 13, 'liga'),
+(2, 1, 14, 'champions'),
+(3, 1, 11, 'musim'),
+(4, 2, 64, 'final'),
+(5, 2, 67, 'chelsea'),
+(6, 2, 66, 'europa');
+
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `stopword`
+-- Table structure for table `stopword`
 --
 
 CREATE TABLE `stopword` (
@@ -172,7 +183,7 @@ CREATE TABLE `stopword` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `stopword`
+-- Dumping data for table `stopword`
 --
 
 INSERT INTO `stopword` (`stopword`) VALUES
@@ -2453,7 +2464,7 @@ INSERT INTO `stopword` (`stopword`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbindex`
+-- Table structure for table `tbindex`
 --
 
 CREATE TABLE `tbindex` (
@@ -2466,143 +2477,196 @@ CREATE TABLE `tbindex` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbindex`
+-- Dumping data for table `tbindex`
 --
 
 INSERT INTO `tbindex` (`Id`, `Term`, `DocId`, `kategori_id`, `Count`, `Bobot`) VALUES
-(1, 'liverpool', 1, 1, 1, 0),
-(2, 'kokoh', 1, 1, 1, 0),
-(3, 'puncak', 1, 1, 1, 0),
-(4, 'klasemen', 1, 1, 1, 0),
-(5, 'raih', 1, 1, 1, 0),
-(6, 'menang', 1, 1, 1, 0),
-(7, '2-1', 1, 1, 1, 0),
-(8, 'wolves', 1, 1, 1, 0),
-(9, 'pekan', 1, 1, 1, 0),
-(10, 'ke-24', 1, 1, 1, 0),
-(11, 'liga', 1, 1, 1, 0),
-(12, 'inggris', 1, 1, 1, 0),
-(13, 'liverpool', 2, 1, 1, 0),
-(14, 'sukses', 2, 1, 1, 0),
-(15, 'lanjut', 2, 1, 1, 0),
-(16, 'catat', 2, 1, 1, 0),
-(17, 'menang', 2, 1, 1, 0),
-(18, 'liga', 2, 1, 1, 0),
-(19, 'inggris', 2, 1, 1, 0),
-(20, 'hasil', 2, 1, 1, 0),
-(21, 'tekuk', 2, 1, 1, 0),
-(22, 'tuan', 2, 1, 1, 0),
-(23, 'rumah', 2, 1, 1, 0),
-(24, 'wolverhampton', 2, 1, 1, 0),
-(25, 'wanderers', 2, 1, 1, 0),
-(26, 'stadion', 2, 1, 1, 0),
-(27, 'molineux', 2, 1, 1, 0),
-(28, 'jumat', 2, 1, 1, 0),
-(29, '24', 2, 1, 1, 0),
-(30, '1', 2, 1, 1, 0),
-(31, 'skor', 2, 1, 1, 0),
-(32, '2-1', 2, 1, 1, 0),
-(33, 'liverpool', 3, 1, 2, 0),
-(34, 'kokoh', 3, 1, 1, 0),
-(35, 'puncak', 3, 1, 1, 0),
-(36, 'klasemen', 3, 1, 1, 0),
-(37, 'raih', 3, 1, 1, 0),
-(38, 'menang', 3, 1, 2, 0),
-(39, '2-1', 3, 1, 2, 0),
-(40, 'wolves', 3, 1, 1, 0),
-(41, 'pekan', 3, 1, 1, 0),
-(42, 'ke-24', 3, 1, 1, 0),
-(43, 'liga', 3, 1, 2, 0),
-(44, 'inggris', 3, 1, 2, 0),
-(45, 'sukses', 3, 1, 1, 0),
-(46, 'lanjut', 3, 1, 1, 0),
-(47, 'catat', 3, 1, 1, 0),
-(48, 'hasil', 3, 1, 1, 0),
-(49, 'tekuk', 3, 1, 1, 0),
-(50, 'tuan', 3, 1, 1, 0),
-(51, 'rumah', 3, 1, 1, 0),
-(52, 'wolverhampton', 3, 1, 1, 0),
-(53, 'wanderers', 3, 1, 1, 0),
-(54, 'stadion', 3, 1, 1, 0),
-(55, 'molineux', 3, 1, 1, 0),
-(56, 'jumat', 3, 1, 1, 0),
-(57, '24', 3, 1, 1, 0),
-(58, '1', 3, 1, 1, 0),
-(59, 'skor', 3, 1, 1, 0);
+(1, 'barcelona', 1, 1, 2, 0),
+(2, 'dinilai', 1, 1, 1, 0),
+(3, 'pep', 1, 1, 1, 0),
+(4, 'guardiola', 1, 1, 1, 0),
+(5, 'layak', 1, 1, 1, 0),
+(6, 'ditakuti', 1, 1, 1, 0),
+(7, 'level', 1, 1, 1, 0),
+(8, 'eropa', 1, 1, 2, 0),
+(9, 'kendati', 1, 1, 1, 0),
+(10, 'sudah', 1, 1, 1, 0),
+(11, 'musim', 1, 1, 3, 0),
+(12, 'juara', 1, 1, 1, 0),
+(13, 'liga', 1, 1, 4, 0),
+(14, 'champions', 1, 1, 3, 0),
+(15, '2014', 1, 1, 1, 0),
+(16, '2015', 1, 1, 1, 0),
+(17, 'kalinya', 1, 1, 1, 0),
+(18, 'menjuarai', 1, 1, 1, 0),
+(19, 'merangkai', 1, 1, 1, 0),
+(20, 'treble', 1, 1, 1, 0),
+(21, 'memenangi', 1, 1, 1, 0),
+(22, 'spanyol', 1, 1, 1, 0),
+(23, 'copa', 1, 1, 1, 0),
+(24, 'del', 1, 1, 1, 0),
+(25, 'rey', 1, 1, 1, 0),
+(26, 'neymar', 1, 1, 2, 0),
+(27, 'absen', 1, 1, 1, 0),
+(28, 'laga', 1, 1, 1, 0),
+(29, 'kompetisi', 1, 1, 1, 0),
+(30, 'depan', 1, 1, 1, 0),
+(31, 'apapun', 1, 1, 1, 0),
+(32, 'klubnya', 1, 1, 1, 0),
+(33, 'nanti', 1, 1, 1, 0),
+(34, 'banding', 1, 1, 1, 0),
+(35, 'paris', 1, 1, 1, 0),
+(36, 'st', 1, 1, 1, 0),
+(37, 'germain', 1, 1, 1, 0),
+(38, 'untuk', 1, 1, 1, 0),
+(39, 'hukumannya', 1, 1, 1, 0),
+(40, 'ditolak', 1, 1, 1, 0),
+(41, 'uefa', 1, 1, 1, 0),
+(42, 'skorsing', 1, 1, 1, 0),
+(43, 'seiring', 1, 1, 1, 0),
+(44, 'unggahan', 1, 1, 1, 0),
+(45, 'kata-kata', 1, 1, 1, 0),
+(46, 'kasar', 1, 1, 1, 0),
+(47, 'ofisial', 1, 1, 1, 0),
+(48, 'pertandingan', 1, 1, 1, 0),
+(49, 'media', 1, 1, 1, 0),
+(50, 'sosial', 1, 1, 1, 0),
+(51, 'psg', 1, 1, 1, 0),
+(52, 'disingkirkan', 1, 1, 1, 0),
+(53, 'manchester', 1, 1, 1, 0),
+(54, 'united', 1, 1, 1, 0),
+(55, 'di', 1, 1, 1, 0),
+(56, '16', 1, 1, 1, 0),
+(57, 'besar', 1, 1, 1, 0),
+(58, '2018', 1, 1, 1, 0),
+(59, '19', 1, 1, 1, 0),
+(60, 'ancaman', 2, 1, 1, 0),
+(61, 'sepi', 2, 1, 1, 0),
+(62, 'penonton', 2, 1, 1, 0),
+(63, 'membayangi', 2, 1, 1, 0),
+(64, 'final', 2, 1, 3, 0),
+(65, 'liga', 2, 1, 2, 0),
+(66, 'europa', 2, 1, 2, 0),
+(67, 'chelsea', 2, 1, 3, 0),
+(68, 'melawan', 2, 1, 1, 0),
+(69, 'arsenal', 2, 1, 2, 0),
+(70, 'seiring', 2, 1, 1, 0),
+(71, 'blunder', 2, 1, 1, 0),
+(72, 'uefa', 2, 1, 1, 0),
+(73, 'penunjukkan', 2, 1, 1, 0),
+(74, 'lokasi', 2, 1, 1, 0),
+(75, 'alokasi', 2, 1, 1, 0),
+(76, 'tiket', 2, 1, 2, 0),
+(77, 'permasalahan', 2, 1, 1, 0),
+(78, 'dan', 2, 1, 2, 0),
+(79, 'akomodasi', 2, 1, 1, 0),
+(80, 'venue', 2, 1, 1, 0),
+(81, 'baku', 2, 1, 2, 0),
+(82, 'olympic', 2, 1, 2, 0),
+(83, 'stadium', 2, 1, 2, 0),
+(84, 'belum', 2, 1, 1, 0),
+(85, 'teratasi', 2, 1, 1, 0),
+(86, 'dibawa', 2, 1, 1, 0),
+(87, 'sarri', 2, 1, 1, 0),
+(88, 'memenangi', 2, 1, 1, 0),
+(89, 'mengalahkan', 2, 1, 1, 0),
+(90, '4-1', 2, 1, 1, 0),
+(91, 'kamis', 2, 1, 1, 0),
+(92, '30', 2, 1, 1, 0),
+(93, '5', 2, 1, 1, 0),
+(94, 'dinihari', 2, 1, 1, 0),
+(95, 'wib', 2, 1, 1, 0),
+(96, 'empat', 2, 1, 1, 0),
+(97, 'gol', 2, 1, 2, 0),
+(98, 'didapatkan', 2, 1, 1, 0),
+(99, 'olivier', 2, 1, 1, 0),
+(100, 'giroud', 2, 1, 1, 0),
+(101, 'pedro', 2, 1, 1, 0),
+(102, 'rodriguez', 2, 1, 1, 0),
+(103, 'eden', 2, 1, 1, 0),
+(104, 'hazard', 2, 1, 1, 0),
+(105, '2', 2, 1, 1, 0),
+(106, 'keberhasilan', 2, 1, 1, 0),
+(107, 'tersebut', 2, 1, 1, 0),
+(108, 'menjalani', 2, 1, 1, 0),
+(109, 'musim', 2, 1, 1, 0),
+(110, 'relatif', 2, 1, 1, 0),
+(111, 'bagus', 2, 1, 1, 0),
+(112, 'keseluruhan', 2, 1, 1, 0);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `data_test`
+-- Indexes for table `data_test`
 --
 ALTER TABLE `data_test`
   ADD PRIMARY KEY (`id_test`);
 
 --
--- Indeks untuk tabel `data_training`
+-- Indexes for table `data_training`
 --
 ALTER TABLE `data_training`
   ADD PRIMARY KEY (`id_training`);
 
 --
--- Indeks untuk tabel `kategori`
+-- Indexes for table `kategori`
 --
 ALTER TABLE `kategori`
   ADD PRIMARY KEY (`idkategori`);
 
 --
--- Indeks untuk tabel `kategoriolahraga`
+-- Indexes for table `kategoriolahraga`
 --
 ALTER TABLE `kategoriolahraga`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `stopword`
+-- Indexes for table `stopword`
 --
 ALTER TABLE `stopword`
   ADD KEY `stopword` (`stopword`);
 
 --
--- Indeks untuk tabel `tbindex`
+-- Indexes for table `tbindex`
 --
 ALTER TABLE `tbindex`
   ADD PRIMARY KEY (`Id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `data_test`
+-- AUTO_INCREMENT for table `data_test`
 --
 ALTER TABLE `data_test`
   MODIFY `id_test` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
--- AUTO_INCREMENT untuk tabel `data_training`
+-- AUTO_INCREMENT for table `data_training`
 --
 ALTER TABLE `data_training`
-  MODIFY `id_training` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_training` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `kategori`
+-- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
   MODIFY `idkategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT untuk tabel `kategoriolahraga`
+-- AUTO_INCREMENT for table `kategoriolahraga`
 --
 ALTER TABLE `kategoriolahraga`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT untuk tabel `tbindex`
+-- AUTO_INCREMENT for table `tbindex`
 --
 ALTER TABLE `tbindex`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
