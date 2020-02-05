@@ -1,8 +1,8 @@
 <?php
 
-// if(function_exists($_GET['f'])) {
-//     $_GET['f']();
-//  }
+if(function_exists($_GET['f'])) {
+    $_GET['f']();
+ }
 //---------------------------- Bayes Libs - PHP AI
 require_once __DIR__ . '/../vendor/autoload.php';
 
@@ -85,11 +85,11 @@ function lastid($coloumn,$table,$kategori)
     return $id[0];
 }
 
-function lastidtesting($coloumn,$table)
+function lastidtesting()
 {
     include "koneksi.php";
 
-    $result = mysqli_query($konek,"SELECT max($coloumn) FROM $table");
+    $result = mysqli_query($konek,"SELECT max(id_test) FROM data_test");
 
     // if (!$result) {
     //     die('Could not query:' . mysql_error());
@@ -183,55 +183,7 @@ function kat_nonpemerintah($idtraining)
     }
 
     foreach($res as $res) {
-        $query="INSERT INTO kategorinonpemerintah(id_datatraining, id_tbindex, keyword) VALUES ($idtraining, '$res[0]', '$res[1]')";
-        mysqli_query($konek,$query);
-    }
-    return $res;
-}
-
-function kat_teknologi($idtraining)
-{
-    include "koneksi.php";
-
-    // $result = mysqli_query($konek,"SELECT * FROM tbindex WHERE kategori_id='1' AND DocId='$idtraining' LIMIT 3 ORDER BY 'Count' Desc ");
-
-    // $id =mysqli_fetch_array($result);
-    // $id=mysqli_error($result);
-    $query="(SELECT * FROM tbindex WHERE kategori_id='3' AND DocId='$idtraining' ORDER BY Count DESC)LIMIT 3";
-    if (!mysqli_query($konek,$query)) {
-        echo("Error description: " . mysqli_error($konek));
-    }
-    else{
-        $result = mysqli_query($konek,$query);
-        $res =mysqli_fetch_all($result);
-    }
-
-    foreach($res as $res) {
-        $query="INSERT INTO kategoriteknologi (id_datatraining, id_tbindex, keyword) VALUES ($idtraining, '$res[0]', '$res[1]')";
-        mysqli_query($konek,$query);
-    }
-    return $res;
-}
-
-function kat_pemerintahan($idtraining)
-{
-    include "koneksi.php";
-
-    // $result = mysqli_query($konek,"SELECT * FROM tbindex WHERE kategori_id='1' AND DocId='$idtraining' LIMIT 3 ORDER BY 'Count' Desc ");
-
-    // $id =mysqli_fetch_array($result);
-    // $id=mysqli_error($result);
-    $query="(SELECT * FROM tbindex WHERE kategori_id='4' AND DocId='$idtraining' ORDER BY Count DESC)LIMIT 3";
-    if (!mysqli_query($konek,$query)) {
-        echo("Error description: " . mysqli_error($konek));
-    }
-    else{
-        $result = mysqli_query($konek,$query);
-        $res =mysqli_fetch_all($result);
-    }
-
-    foreach($res as $res) {
-        $query="INSERT INTO kategoripemerintahan (id_datatraining, id_tbindex, keyword) VALUES ($idtraining, '$res[0]', '$res[1]')";
+        $query="INSERT INTO kategorinonpemerintahan(id_datatraining, id_tbindex, keyword) VALUES ($idtraining, '$res[0]', '$res[1]')";
         mysqli_query($konek,$query);
     }
     return $res;
@@ -288,14 +240,13 @@ function buatindextesting($id) {
      // mysqli_query($konek,"TRUNCATE TABLE tbindex");
 
      //ambil semua berita (teks)
-     $resBerita = mysqli_query($konek,"SELECT * FROM data_training WHERE id_training='$id'");
+     $resBerita = mysqli_query($konek,"SELECT * FROM data_test WHERE id_test='$id'");
      $num_rows = mysqli_num_rows($resBerita);
-     print("Mengindeks sebanyak " . $num_rows . " dokumen. <br />");
 
      while($row = mysqli_fetch_array($resBerita)) {
-         $docId = $row['id_training'];
+         $docId = $row['id_test'];
          $berita = $row['text_proses'];
-         $id_kategori=$row['kategori'];
+        //  $id_kategori=$row['kategori'];
 
            //simpan ke inverted index (tbindex)
            $aberita = explode(" ", trim($berita));
@@ -305,7 +256,7 @@ function buatindextesting($id) {
              if ($aberita[$j] != "") {
 
                  //berapa baris hasil yang dikembalikan query tersebut?
-                 $rescount = mysqli_query($konek,"SELECT Count FROM tbindex WHERE Term = '$aberita[$j]' AND DocId = $docId");
+                 $rescount = mysqli_query($konek,"SELECT Count FROM tbindextesting WHERE Term = '$aberita[$j]' AND DocId = $docId");
                  $num_rows = mysqli_num_rows($rescount);
 
                  //jika sudah ada DocId dan Term tersebut	, naikkan Count (+1)
@@ -314,11 +265,11 @@ function buatindextesting($id) {
                      $count = $rowcount['Count'];
                      $count++;
 
-                     mysqli_query($konek,"UPDATE tbindex SET Count = $count WHERE Term = '$aberita[$j]' AND DocId = $docId");
+                     mysqli_query($konek,"UPDATE tbindextesting SET Count = $count WHERE Term = '$aberita[$j]' AND DocId = $docId");
                  }
                  //jika belum ada, langsung simpan ke tbindex
                  else {
-                     mysqli_query($konek,"INSERT INTO tbindex (Term, DocId, kategori_id, Count) VALUES ('$aberita[$j]', $docId, $id_kategori, 1)");
+                     mysqli_query($konek,"INSERT INTO tbindextesting (Term, DocId, Count) VALUES ('$aberita[$j]', $docId, 1)");
                  }
              } //end if
          } //end foreach
@@ -354,6 +305,77 @@ function getrow($table = "", $kondisi = "")
     }
     return $val;
 }
+
+function getindextesting($id)
+{
+    include "koneksi.php";
+    $query="SELECT * FROM tbindextesting WHERE DocId='$id'";
+    if (!mysqli_query($konek,$query)) {
+        echo("Error description: " . mysqli_error($konek));
+    }
+    else{
+        $result = mysqli_query($konek,$query);
+        $res =mysqli_fetch_all($result);
+        return $res;
+    }
+}
+
+function getindextraining($kategori,$tbljoin)
+{
+    include "koneksi.php";
+    $query="SELECT * FROM kategoripemerintahan INNER JOIN $tbljoin ON $tbljoin.id = kategoripemerintahan.id_tbindex WHERE kategori_id='$kategori'";
+    if (!mysqli_query($konek,$query)) {
+        echo("Error description: " . mysqli_error($konek));
+    }
+    else{
+        $result = mysqli_query($konek,$query);
+        $res =mysqli_fetch_all($result);
+        return $res;
+    }
+}
+
+function count_f($table,$where=NULL)
+{
+    include "koneksi.php";
+    if(empty($where)){
+        $query="SELECT COUNT(*) FROM $table";
+    }
+    else{
+        $query="SELECT COUNT(*) FROM $table WHERE $where";
+    }
+    
+    if (!mysqli_query($konek,$query)) {
+        echo("Error description: " . mysqli_error($konek));
+    }
+    else{
+        $result = mysqli_query($konek,$query);
+        $res =mysqli_fetch_array($result);
+        return $res[0];
+    }
+}
+
+function check()
+{
+    $katatesting=count_f("tbindextesting","DocId='1'");
+    $katatrainingpemerintahan=count_f("kategoripemerintahan");
+
+    $datatesting=getindextesting("1");
+    $datatraining=getindextraining("1","tbindex");
+
+    // echo var_dump($datatraining[0]);
+    echo var_dump($datatraining[0]);
+
+    // foreach($datatesting as $testing)
+    // {
+    //     for ($x = 0; $x <=$katatrainingpemerintahan ; $x++) {
+    //         if($testing[1])
+    //         {
+
+    //         }
+    //     }
+    // }
+}
+
 
 function input($table = "", $post)
 {

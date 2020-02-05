@@ -1,9 +1,10 @@
 <!-- MODALS -->
+
 <div id="tambah_test" class="modal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Tambah Data Test</h5>
+                <h5 class="modal-title">Tambah Data Testing</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -11,32 +12,26 @@
             <div class="modal-body">
                 <div class="card card-nav-tabs card-plain">
                     <div class="card-header card-header-danger">
-                        <div class="nav-tabs-navigation">
-                            <div class="nav-tabs-wrapper">
-                                <ul class="nav nav-tabs" data-tabs="tabs">
-                                    <!-- <li class="nav-item">
-                                        <a class="nav-link active" href="#Manual_test" data-toggle="tab">Manual
-                                            Input</a>
-                                    </li> -->
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#Export_test" data-toggle="tab">Export CSV</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                        
                     </div>
-                </div>
-                <div class="tab-pane active" id="Export_test">
+
+                    <div class="tab-pane active" id="Export_test">
                     
-                        <div class="form-group form-float form-group-lg">
-                            <div class="form-line">
-                                <input type="text" class="form-control" name="judul_berita" />
-                                <label class="form-label">Judul Berita</label>
+                        <?php 
+                            include "./system/koneksi.php";
+                            $result = mysqli_query($konek,"SELECT * FROM kategori");
+                        ?> 
+                        <form method="POST" enctype="multipart/form-data" style="margin-top:24px;">
+                            <div class="form-group form-float form-group-lg">
+                                <div class="form-line">
+                                    <textarea class="form-control" name="isi"></textarea>
+                                    <label class="form-label">Isi Berita</label>
+                                </div>
                             </div>
-						</div>
-                        <input name="file" type="file" multiple="" class="form-control" accept=".csv">
-                        <button name="uploadTest" type="submit" class="btn btn-success pull-right" style="bottom:0;margin-top:36px;">Submit</button>
-                    </form>
+                            <!-- <form method="POST" enctype="multipart/form-data" style="margin-top:24px;"> -->
+                            <button name="uploadTest" type="submit" class="btn btn-success pull-right" style="bottom:0;margin-top:36px;">Submit</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

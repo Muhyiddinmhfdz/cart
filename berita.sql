@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 05, 2020 at 02:38 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.1
+-- Waktu pembuatan: 05 Feb 2020 pada 16.20
+-- Versi server: 10.4.11-MariaDB
+-- Versi PHP: 7.2.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,20 +25,27 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `data_test`
+-- Struktur dari tabel `data_test`
 --
 
 CREATE TABLE `data_test` (
   `id_test` int(10) NOT NULL,
-  `konten` text NOT NULL,
-  `text_proses` text DEFAULT NULL,
+  `konten` longtext NOT NULL,
+  `text_proses` longtext DEFAULT NULL,
   `kategori` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `data_test`
+--
+
+INSERT INTO `data_test` (`id_test`, `konten`, `text_proses`, `kategori`) VALUES
+(1, 'Semarang- Sekertaris Daerah Kota Semarang Iswar Aminudin mewakili Wali kota semarang Hendrar Prihadi menghadiri acara festival pedurungan dilaksanakan di kantor kecamatan pedurungan, Rabu (5/2).\r\n\r\nAcara festival pedurungan ini merupakan acara yang di buat oleh mahasiswa KKN Universitas Semarang. Di dalam Festival ini terdapat expo Usaha Mikro, Kecil dan Menengah (UMKM), lomba mewarnai, dan donor darah. Sejumlah 230 mahasiswa mengikuti kegiatan Kuliah Kerja Nyata (KKN) dan di sebar di 13 lokasi kelurahan yang ada di kecamatan Pedurungan.\r\n\r\n Secara simbolis Sekertaris Daerah Iswar Aminudin dan Rektor Universitas Semarang Andy Kridadusila melepaskan burung dara sebagai tanda melepaskan mahasiswa peserta KKN.\r\n\r\nDalam sambutannya, iswar aminudin menyampaikan apa yang kita dapatkan dalam kuliah adalah teori dalam waktu satu bulan ini para mahasiswa sudah melihat fenomena langsung kondisi masyarakat seperti apa dan pemerintah sudah berbuat apa masyarakat sudah melakukan apada sehingga menjadi modal untuk merefleksikan kembali apa yang di dapatkan di bangku kuliah.\r\n\r\nDi akhir acara, beliau berpesan para mahasiswa bisa membangun semarang , membangun jawa tengah , membangun bangsa dan negara menjadi semakin besar.', 'semarang- sekertaris daerah kota semarang iswar aminudin wakil wali kota semarang hendrar prihadi hadir acara festival pedurungan laksana kantor camat pedurungan rabu 5 2 acara festival pedurungan acara mahasiswa kkn universitas semarang festival expo usaha mikro tengah umkm lomba warna donor darah 230 mahasiswa ikut giat kuliah kerja nyata kkn di sebar di 13 lokasi lurah di camat pedurungan simbolis sekertaris daerah iswar aminudin dan rektor universitas semarang andy kridadusila lepas burung dara tanda lepas mahasiswa serta kkn dalam sambut iswar aminudin dapat kuliah teori mahasiswa fenomena langsung kondisi masyarakat dan perintah buat masyarakat apada modal refleksi apa yang di dapat di bangku kuliah di acara beliau pesan mahasiswa bangun semarang bangun jawa bangun bangsa dan negara besar', '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `data_training`
+-- Struktur dari tabel `data_training`
 --
 
 CREATE TABLE `data_training` (
@@ -49,17 +56,17 @@ CREATE TABLE `data_training` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `data_training`
+-- Dumping data untuk tabel `data_training`
 --
 
 INSERT INTO `data_training` (`id_training`, `konten`, `text_proses`, `kategori`) VALUES
 (1, 'SURABAYA, KOMPAS.com - Wali Kota Surabaya, Tri Rismaharini, sempat dilaporkan ke Ombudsman Jawa Timur karena telah melaporkan netizen bernama Zikria Dzatil ke polisi. Risma dianggap memanfaatkan fasilitas negara dalam pelaporan itu. Kepala Perwakilan Ombudsman Jawa Timur, Agus Widiyarta membenarkan ada laporan masuk ke meja kerjanya tentang hal tersebut. Namun, dia enggan menyebut atas nama siapa laporan tersebut karena dia harus menjaga privasi pelapornya. Baca juga: Proses Hukum Pemilik Akun Penghina Risma Tetap Dilanjutkan Meski Dimaafkan \"Maaf saya tidak bisa menyebut siapa pelapornya,\" kata Agus, saat dikonfirmasi melalui telepon, Rabu (5/2/2020). Secara umum, laporan tertulis tersebut berisikan Risma dinilai menyalahgunakan wewenang sebagai wali kota Surabaya dalam melaporkan akun Facebok yang disebut menghinanya secara pribadi. Dalam laporan juga disertakan dasar hukum pasal penghinaan pejabat negara telah dihapus sebagaimana Keputusan Mahkamah Konstitusi 31/PUU-XIII/2015 tentang judicial review Pasal 319. Surat tersebut juga melaporkan Polrestabes Surabaya yang disebut tidak memiliki dasar hukum dalam menangkap Zikria Dzatil, pemilik akun Facebook yang disebut menghina Risma di media sosial. Namun, kata Agus, berdasarkan kajian pihaknya secara materiil maupun formil, Ombudsman Jawa Timur memutuskan tidak menindaklanjuti laporan. \"Kami tidak bisa menindaklanjuti laporan karena pelapor bukan sebagai korban langsung dari pelayanan publik,\" ujar dia.', 'surabaya kompas com wali kota surabaya tri rismaharini dilaporkan ombudsman jawa timur melaporkan netizen bernama zikria dzatil polisi risma dianggap memanfaatkan fasilitas negara pelaporan itu kepala perwakilan ombudsman jawa timur agus widiyarta membenarkan laporan masuk meja kerjanya tersebut namun enggan menyebut nama laporan menjaga privasi pelapornya baca juga proses hukum pemilik akun penghina risma dilanjutkan dimaafkan maaf menyebut pelapornya agus dikonfirmasi telepon rabu 5 2 2020 umum laporan tertulis berisikan risma dinilai menyalahgunakan wewenang wali kota surabaya melaporkan akun facebok menghinanya pribadi laporan disertakan dasar hukum pasal penghinaan pejabat negara dihapus keputusan mahkamah konstitusi 31 puu-xiii 2015 judicial review pasal 319 surat melaporkan polrestabes surabaya memiliki dasar hukum dalam menangkap zikria dzatil pemilik akun facebook menghina risma media sosial namun agus berdasarkan kajian materiil formil ombudsman jawa timur memutuskan menindaklanjuti laporan kami tidak menindaklanjuti laporan pelapor korban langsung pelayanan publik dia', '1'),
-(2, 'SURABAYA, KOMPAS.com - Wali Kota Surabaya Tri Rismaharini angkat bicara soal kasus dugaan penghinaan terhadap dirinya oleh pemilik akun Facebook bernama Zikria Dzatil. Pemilik akun Facebook yang merupakan seorang ibu rumah tangga asal Bogor, Jawa Barat, itu kita telah ditahan dan ditetapkan sebagai tersangka oleh Polrestabes Surabaya. Risma pun mengungkapkan alasan ia melaporkan akun tersebut kepada kepolisian. \"Sebetulnya, kemarin alasan saya kenapa saya melaporkan, pertama yaitu pribadi saya. Karena kalau saya kodok, berarti ibu saya kodok,\" kata Risma saat ditemui di Rumah Dinas Wali Kota Surabaya, Rabu (5/2/2020). Baca juga: Pengakuan Pemilik Akun Facebook yang Jadi Tersangka karena Menghina Risma Risma menyampaikan, unggahan bernada penghinaan yang dilakukan Zikria Dzatil kepada dirinya juga dianggap telah menghina kedua orangtua Risma. \"Saya enggak pengin orangtua saya direndahkan,\" ucap Risma. Di sisi lain, lanjut Risma, ada banyak dorongan dan desakan dari masyarakat yang meminta dirinya untuk melaporkan pemilik akun Facebook itu. Risma mengatakan, laporan tersebut dibuat atas nama dirinya pribadi dan bukan atas nama siapa pun. Selain itu, ada beberapa warga Surabaya yang turut melaporkan pemilik akun Facebook bernama Zikria Dzatil itu. \"Saya pribadi yang melaporkan, saya laporkan pribadi, bukan atas nama siapa pun. Saya yang tanda tangan sendiri,\" ujar Risma.\r\n', 'surabaya kompas com wali kota surabaya tri rismaharini angkat bicara dugaan penghinaan pemilik akun facebook bernama zikria dzatil pemilik akun facebook rumah tangga bogor jawa barat ditahan ditetapkan tersangka polrestabes surabaya risma alasan melaporkan akun kepolisian sebetulnya kemarin alasan melaporkan pribadi saya kodok saya kodok risma ditemui rumah dinas wali kota surabaya rabu 5 2 2020 baca juga pengakuan pemilik akun facebook tersangka menghina risma risma menyampaikan unggahan bernada penghinaan zikria dzatil dianggap menghina orangtua risma saya pengin orangtua saya direndahkan risma sisi lain risma dorongan desakan masyarakat yang melaporkan pemilik akun facebook itu risma mengatakan laporan nama dirinya pribadi nama pun itu warga surabaya yang melaporkan pemilik akun facebook bernama zikria dzatil itu saya pribadi yang melaporkan saya laporkan pribadi nama pun saya yang tanda tangan sendiri risma', '2');
+(3, 'SURABAYA, KOMPAS.com - Wali Kota Surabaya Tri Rismaharini angkat bicara soal kasus dugaan penghinaan terhadap dirinya oleh pemilik akun Facebook bernama Zikria Dzatil. Pemilik akun Facebook yang merupakan seorang ibu rumah tangga asal Bogor, Jawa Barat, itu kita telah ditahan dan ditetapkan sebagai tersangka oleh Polrestabes Surabaya. Risma pun mengungkapkan alasan ia melaporkan akun tersebut kepada kepolisian. \"Sebetulnya, kemarin alasan saya kenapa saya melaporkan, pertama yaitu pribadi saya. Karena kalau saya kodok, berarti ibu saya kodok,\" kata Risma saat ditemui di Rumah Dinas Wali Kota Surabaya, Rabu (5/2/2020). Baca juga: Pengakuan Pemilik Akun Facebook yang Jadi Tersangka karena Menghina Risma Risma menyampaikan, unggahan bernada penghinaan yang dilakukan Zikria Dzatil kepada dirinya juga dianggap telah menghina kedua orangtua Risma. \"Saya enggak pengin orangtua saya direndahkan,\" ucap Risma. Di sisi lain, lanjut Risma, ada banyak dorongan dan desakan dari masyarakat yang meminta dirinya untuk melaporkan pemilik akun Facebook itu. Risma mengatakan, laporan tersebut dibuat atas nama dirinya pribadi dan bukan atas nama siapa pun. Selain itu, ada beberapa warga Surabaya yang turut melaporkan pemilik akun Facebook bernama Zikria Dzatil itu. \"Saya pribadi yang melaporkan, saya laporkan pribadi, bukan atas nama siapa pun. Saya yang tanda tangan sendiri,\" ujar Risma.', 'surabaya kompas com wali kota surabaya tri rismaharini angkat bicara duga hina milik akun facebook nama zikria dzatil milik akun facebook rumah tangga bogor jawa barat tahan tetap sangka polrestabes surabaya risma alas lapor akun polisi betul kemarin alas lapor pribadi saya kodok saya kodok risma temu rumah dinas wali kota surabaya rabu 5 2 2020 baca juga aku milik akun facebook sangka hina risma risma sampai unggah nada hina zikria dzatil anggap hina orangtua risma saya pengin orangtua saya rendah risma sisi lain risma dorong desa masyarakat yang lapor milik akun facebook itu risma kata lapor nama diri pribadi nama pun itu warga surabaya yang lapor milik akun facebook nama zikria dzatil itu saya pribadi yang lapor saya lapor pribadi nama pun saya yang tanda tangan sendiri risma', '2');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kategori`
+-- Struktur dari tabel `kategori`
 --
 
 CREATE TABLE `kategori` (
@@ -68,7 +75,7 @@ CREATE TABLE `kategori` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `kategori`
+-- Dumping data untuk tabel `kategori`
 --
 
 INSERT INTO `kategori` (`idkategori`, `namakategori`) VALUES
@@ -78,7 +85,7 @@ INSERT INTO `kategori` (`idkategori`, `namakategori`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kategorinonpemerintahan`
+-- Struktur dari tabel `kategorinonpemerintahan`
 --
 
 CREATE TABLE `kategorinonpemerintahan` (
@@ -88,10 +95,19 @@ CREATE TABLE `kategorinonpemerintahan` (
   `keyword` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `kategorinonpemerintahan`
+--
+
+INSERT INTO `kategorinonpemerintahan` (`id`, `id_datatraining`, `id_tbindex`, `keyword`) VALUES
+(1, 3, 200, 'risma'),
+(2, 3, 202, 'lapor'),
+(3, 3, 207, 'saya');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kategoripemerintahan`
+-- Struktur dari tabel `kategoripemerintahan`
 --
 
 CREATE TABLE `kategoripemerintahan` (
@@ -102,7 +118,7 @@ CREATE TABLE `kategoripemerintahan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `kategoripemerintahan`
+-- Dumping data untuk tabel `kategoripemerintahan`
 --
 
 INSERT INTO `kategoripemerintahan` (`id`, `id_datatraining`, `id_tbindex`, `keyword`) VALUES
@@ -116,7 +132,7 @@ INSERT INTO `kategoripemerintahan` (`id`, `id_datatraining`, `id_tbindex`, `keyw
 -- --------------------------------------------------------
 
 --
--- Table structure for table `stopword`
+-- Struktur dari tabel `stopword`
 --
 
 CREATE TABLE `stopword` (
@@ -124,7 +140,7 @@ CREATE TABLE `stopword` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `stopword`
+-- Dumping data untuk tabel `stopword`
 --
 
 INSERT INTO `stopword` (`stopword`) VALUES
@@ -2405,7 +2421,7 @@ INSERT INTO `stopword` (`stopword`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbindex`
+-- Struktur dari tabel `tbindex`
 --
 
 CREATE TABLE `tbindex` (
@@ -2418,7 +2434,7 @@ CREATE TABLE `tbindex` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbindex`
+-- Dumping data untuk tabel `tbindex`
 --
 
 INSERT INTO `tbindex` (`Id`, `Term`, `DocId`, `kategori_id`, `Count`, `Bobot`) VALUES
@@ -2594,12 +2610,77 @@ INSERT INTO `tbindex` (`Id`, `Term`, `DocId`, `kategori_id`, `Count`, `Bobot`) V
 (170, 'laporkan', 2, 1, 1, 5.15329),
 (171, 'tanda', 2, 1, 1, 5.15329),
 (172, 'tangan', 2, 1, 1, 5.15329),
-(173, 'sendiri', 2, 1, 1, 5.15329);
+(173, 'sendiri', 2, 1, 1, 5.15329),
+(174, 'surabaya', 3, 2, 20, 27.3614),
+(175, 'kompas', 3, 2, 4, 5.47227),
+(176, 'com', 3, 2, 4, 5.47227),
+(177, 'wali', 3, 2, 8, 10.9445),
+(178, 'kota', 3, 2, 8, 10.9445),
+(179, 'tri', 3, 2, 4, 5.47227),
+(180, 'rismaharini', 3, 2, 4, 5.47227),
+(181, 'angkat', 3, 2, 4, 5.47227),
+(182, 'bicara', 3, 2, 4, 5.47227),
+(183, 'duga', 3, 2, 4, 5.47227),
+(184, 'hina', 3, 2, 16, 21.8891),
+(185, 'milik', 3, 2, 20, 27.3614),
+(186, 'akun', 3, 2, 24, 32.8336),
+(187, 'facebook', 3, 2, 20, 27.3614),
+(188, 'nama', 3, 2, 20, 27.3614),
+(189, 'zikria', 3, 2, 12, 16.4168),
+(190, 'dzatil', 3, 2, 12, 16.4168),
+(191, 'rumah', 3, 2, 8, 10.9445),
+(192, 'tangga', 3, 2, 4, 5.47227),
+(193, 'bogor', 3, 2, 4, 5.47227),
+(194, 'jawa', 3, 2, 4, 5.47227),
+(195, 'barat', 3, 2, 4, 5.47227),
+(196, 'tahan', 3, 2, 4, 5.47227),
+(197, 'tetap', 3, 2, 4, 5.47227),
+(198, 'sangka', 3, 2, 8, 10.9445),
+(199, 'polrestabes', 3, 2, 4, 5.47227),
+(200, 'risma', 3, 2, 36, 49.2504),
+(201, 'alas', 3, 2, 8, 10.9445),
+(202, 'lapor', 3, 2, 28, 38.3059),
+(203, 'polisi', 3, 2, 4, 5.47227),
+(204, 'betul', 3, 2, 4, 5.47227),
+(205, 'kemarin', 3, 2, 4, 5.47227),
+(206, 'pribadi', 3, 2, 16, 21.8891),
+(207, 'saya', 3, 2, 28, 38.3059),
+(208, 'kodok', 3, 2, 8, 10.9445),
+(209, 'temu', 3, 2, 4, 5.47227),
+(210, 'dinas', 3, 2, 4, 5.47227),
+(211, 'rabu', 3, 2, 4, 5.47227),
+(212, '5', 3, 2, 4, 5.47227),
+(213, '2', 3, 2, 4, 5.47227),
+(214, '2020', 3, 2, 4, 5.47227),
+(215, 'baca', 3, 2, 4, 5.47227),
+(216, 'juga', 3, 2, 4, 5.47227),
+(217, 'aku', 3, 2, 4, 5.47227),
+(218, 'sampai', 3, 2, 4, 5.47227),
+(219, 'unggah', 3, 2, 4, 5.47227),
+(220, 'nada', 3, 2, 4, 5.47227),
+(221, 'anggap', 3, 2, 4, 5.47227),
+(222, 'orangtua', 3, 2, 8, 10.9445),
+(223, 'pengin', 3, 2, 4, 5.47227),
+(224, 'rendah', 3, 2, 4, 5.47227),
+(225, 'sisi', 3, 2, 4, 5.47227),
+(226, 'lain', 3, 2, 4, 5.47227),
+(227, 'dorong', 3, 2, 4, 5.47227),
+(228, 'desa', 3, 2, 4, 5.47227),
+(229, 'masyarakat', 3, 2, 4, 5.47227),
+(230, 'yang', 3, 2, 16, 21.8891),
+(231, 'itu', 3, 2, 12, 16.4168),
+(232, 'kata', 3, 2, 4, 5.47227),
+(233, 'diri', 3, 2, 4, 5.47227),
+(234, 'pun', 3, 2, 8, 10.9445),
+(235, 'warga', 3, 2, 4, 5.47227),
+(236, 'tanda', 3, 2, 4, 5.47227),
+(237, 'tangan', 3, 2, 4, 5.47227),
+(238, 'sendiri', 3, 2, 4, 5.47227);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbindextesting`
+-- Struktur dari tabel `tbindextesting`
 --
 
 CREATE TABLE `tbindextesting` (
@@ -2610,102 +2691,185 @@ CREATE TABLE `tbindextesting` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
+-- Dumping data untuk tabel `tbindextesting`
+--
+
+INSERT INTO `tbindextesting` (`Id`, `Term`, `DocId`, `Count`) VALUES
+(1, 'semarang-', 1, 1),
+(2, 'sekertaris', 1, 2),
+(3, 'daerah', 1, 2),
+(4, 'kota', 1, 2),
+(5, 'semarang', 1, 5),
+(6, 'iswar', 1, 3),
+(7, 'aminudin', 1, 3),
+(8, 'wakil', 1, 1),
+(9, 'wali', 1, 1),
+(10, 'hendrar', 1, 1),
+(11, 'prihadi', 1, 1),
+(12, 'hadir', 1, 1),
+(13, 'acara', 1, 4),
+(14, 'festival', 1, 3),
+(15, 'pedurungan', 1, 4),
+(16, 'laksana', 1, 1),
+(17, 'kantor', 1, 1),
+(18, 'camat', 1, 2),
+(19, 'rabu', 1, 1),
+(20, '5', 1, 1),
+(21, '2', 1, 1),
+(22, 'mahasiswa', 1, 5),
+(23, 'kkn', 1, 3),
+(24, 'universitas', 1, 2),
+(25, 'expo', 1, 1),
+(26, 'usaha', 1, 1),
+(27, 'mikro', 1, 1),
+(28, 'tengah', 1, 1),
+(29, 'umkm', 1, 1),
+(30, 'lomba', 1, 1),
+(31, 'warna', 1, 1),
+(32, 'donor', 1, 1),
+(33, 'darah', 1, 1),
+(34, '230', 1, 1),
+(35, 'ikut', 1, 1),
+(36, 'giat', 1, 1),
+(37, 'kuliah', 1, 3),
+(38, 'kerja', 1, 1),
+(39, 'nyata', 1, 1),
+(40, 'di', 1, 6),
+(41, 'sebar', 1, 1),
+(42, '13', 1, 1),
+(43, 'lokasi', 1, 1),
+(44, 'lurah', 1, 1),
+(45, 'simbolis', 1, 1),
+(46, 'dan', 1, 3),
+(47, 'rektor', 1, 1),
+(48, 'andy', 1, 1),
+(49, 'kridadusila', 1, 1),
+(50, 'lepas', 1, 2),
+(51, 'burung', 1, 1),
+(52, 'dara', 1, 1),
+(53, 'tanda', 1, 1),
+(54, 'serta', 1, 1),
+(55, 'dalam', 1, 1),
+(56, 'sambut', 1, 1),
+(57, 'dapat', 1, 2),
+(58, 'teori', 1, 1),
+(59, 'fenomena', 1, 1),
+(60, 'langsung', 1, 1),
+(61, 'kondisi', 1, 1),
+(62, 'masyarakat', 1, 2),
+(63, 'perintah', 1, 1),
+(64, 'buat', 1, 1),
+(65, 'apada', 1, 1),
+(66, 'modal', 1, 1),
+(67, 'refleksi', 1, 1),
+(68, 'apa', 1, 1),
+(69, 'yang', 1, 1),
+(70, 'bangku', 1, 1),
+(71, 'beliau', 1, 1),
+(72, 'pesan', 1, 1),
+(73, 'bangun', 1, 3),
+(74, 'jawa', 1, 1),
+(75, 'bangsa', 1, 1),
+(76, 'negara', 1, 1),
+(77, 'besar', 1, 1);
+
+--
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `data_test`
+-- Indeks untuk tabel `data_test`
 --
 ALTER TABLE `data_test`
   ADD PRIMARY KEY (`id_test`);
 
 --
--- Indexes for table `data_training`
+-- Indeks untuk tabel `data_training`
 --
 ALTER TABLE `data_training`
   ADD PRIMARY KEY (`id_training`);
 
 --
--- Indexes for table `kategori`
+-- Indeks untuk tabel `kategori`
 --
 ALTER TABLE `kategori`
   ADD PRIMARY KEY (`idkategori`);
 
 --
--- Indexes for table `kategorinonpemerintahan`
+-- Indeks untuk tabel `kategorinonpemerintahan`
 --
 ALTER TABLE `kategorinonpemerintahan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `kategoripemerintahan`
+-- Indeks untuk tabel `kategoripemerintahan`
 --
 ALTER TABLE `kategoripemerintahan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `stopword`
+-- Indeks untuk tabel `stopword`
 --
 ALTER TABLE `stopword`
   ADD KEY `stopword` (`stopword`);
 
 --
--- Indexes for table `tbindex`
+-- Indeks untuk tabel `tbindex`
 --
 ALTER TABLE `tbindex`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Indexes for table `tbindextesting`
+-- Indeks untuk tabel `tbindextesting`
 --
 ALTER TABLE `tbindextesting`
   ADD PRIMARY KEY (`Id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `data_test`
+-- AUTO_INCREMENT untuk tabel `data_test`
 --
 ALTER TABLE `data_test`
-  MODIFY `id_test` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_test` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `data_training`
+-- AUTO_INCREMENT untuk tabel `data_training`
 --
 ALTER TABLE `data_training`
-  MODIFY `id_training` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_training` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `kategori`
+-- AUTO_INCREMENT untuk tabel `kategori`
 --
 ALTER TABLE `kategori`
   MODIFY `idkategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `kategorinonpemerintahan`
+-- AUTO_INCREMENT untuk tabel `kategorinonpemerintahan`
 --
 ALTER TABLE `kategorinonpemerintahan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `kategoripemerintahan`
+-- AUTO_INCREMENT untuk tabel `kategoripemerintahan`
 --
 ALTER TABLE `kategoripemerintahan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `tbindex`
+-- AUTO_INCREMENT untuk tabel `tbindex`
 --
 ALTER TABLE `tbindex`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=174;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=239;
 
 --
--- AUTO_INCREMENT for table `tbindextesting`
+-- AUTO_INCREMENT untuk tabel `tbindextesting`
 --
 ALTER TABLE `tbindextesting`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=174;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

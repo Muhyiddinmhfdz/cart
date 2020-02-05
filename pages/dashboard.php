@@ -185,12 +185,13 @@ if (isset($_POST['uploadTest'])) {
 
     $proses_text = processing($_POST['isi']);
     $arraytopost = [
-        'kontent' => $_POST['isi'],
-        'text_pro' => $proses_text
+        'konten' => $_POST['isi'],
+        'text_proses' => $proses_text,
+        'kategori'=>NULL
     ];
-    $input_data = upload("data_training", $arraytopost);
+    $input_data = upload("data_test", $arraytopost);
     // $last_id=lastid("data_training",$_POST['kategori']);
-    buatindextesting(lastidtesting("id_training","data_training"));
+    buatindextesting(lastidtesting("id_test","data_test"));
     // if($_POST['kategori']==1){
     //     kat_pemerintah(lastid("id_training","data_training",$_POST['kategori']));
     //     hitungbobotpemerintah();
@@ -199,7 +200,7 @@ if (isset($_POST['uploadTest'])) {
     //     kat_nonpemerintah(lastid("id_training","data_training",$_POST['kategori']));
     //     hitungbobotnonpemerintahan();
     // }
-    // echo $_POST['isi'];
+    // echo var_dump($arraytopost);
     
     echo $input_data == true ? "<script>$(document).ready(function(){ success('Upload') });</script>" : "<script>$(document).ready(function(){ gagal('Upload')});</script>";
 }

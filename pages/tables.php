@@ -6,7 +6,7 @@
                     <th>NO</th>
                     <th>Berita</th>
                     <th>Text Preprocessing</th>
-                    <th>Kelas Aktual</th>
+                    
                     <th>Prediksi</th>
                     <!-- <th>Option</th> -->
                 </tr>
@@ -58,12 +58,12 @@
                         echo "<td>" . $key['text_proses'] . "</td>";
                         echo "<td>" . $key['namakategori'] . "</td>";
                         if($key['kategori']==1){
-                            $sql="INNER JOIN `data_training` ON kategoriolahraga.id_datatraining=data_training.id_training WHERE id_datatraining=".$key['id_training']."";
-                            $data_keyword = getrow("kategoriolahraga",$sql);
+                            $sql="INNER JOIN `data_training` ON kategoripemerintahan.id_datatraining=data_training.id_training WHERE id_datatraining=".$key['id_training']."";
+                            $data_keyword = getrow("kategoripemerintahan",$sql);
                         }
                         if($key['kategori']==2){
-                            $sql="INNER JOIN `data_training` ON kategoripendidikan.id_datatraining=data_training.id_training WHERE id_datatraining=".$key['id_training']."";
-                            $data_keyword = getrow("kategoripendidikan",$sql);
+                            $sql="INNER JOIN `data_training` ON kategorinonpemerintahan.id_datatraining=data_training.id_training WHERE id_datatraining=".$key['id_training']."";
+                            $data_keyword = getrow("kategorinonpemerintahan",$sql);
                         }
                         echo "<td>";
                         foreach ($data_keyword as $keyword) {
