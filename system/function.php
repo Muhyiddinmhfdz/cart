@@ -85,7 +85,63 @@ function lastid($coloumn,$table,$kategori)
     return $id[0];
 }
 
-function kat_olahraga($idtraining)
+function lastidtesting($coloumn,$table)
+{
+    include "koneksi.php";
+
+    $result = mysqli_query($konek,"SELECT max($coloumn) FROM $table");
+
+    // if (!$result) {
+    //     die('Could not query:' . mysql_error());
+    // }
+
+    $id =mysqli_fetch_array($result);
+    return $id[0];
+}
+
+function count_all()
+{
+    include "koneksi.php";
+    $query="SELECT COUNT(*) FROM data_training";
+    if (!mysqli_query($konek,$query)) {
+        echo("Error description: " . mysqli_error($konek));
+    }
+    else{
+        $result = mysqli_query($konek,$query);
+        $res =mysqli_fetch_array($result);
+        return $res[0];
+    }
+}
+
+function count_katpemerintah()
+{
+    include "koneksi.php";
+    $query="SELECT COUNT(*) FROM data_training WHERE kategori='1'";
+    if (!mysqli_query($konek,$query)) {
+        echo("Error description: " . mysqli_error($konek));
+    }
+    else{
+        $result = mysqli_query($konek,$query);
+        $res =mysqli_fetch_array($result);
+        return $res[0];
+    }
+}
+
+function count_katnonpemerintah()
+{
+    include "koneksi.php";
+    $query="SELECT COUNT(*) FROM data_training WHERE kategori='2'";
+    if (!mysqli_query($konek,$query)) {
+        echo("Error description: " . mysqli_error($konek));
+    }
+    else{
+        $result = mysqli_query($konek,$query);
+        $res =mysqli_fetch_array($result);
+        return $res[0];
+    }
+}
+
+function kat_pemerintah($idtraining)
 {
     include "koneksi.php";
 
@@ -103,13 +159,13 @@ function kat_olahraga($idtraining)
     }
 
     foreach($res as $res) {
-        $query="INSERT INTO kategoriolahraga (id_datatraining, id_tbindex, keyword) VALUES ($idtraining, '$res[0]', '$res[1]')";
+        $query="INSERT INTO kategoripemerintahan (id_datatraining, id_tbindex, keyword) VALUES ($idtraining, '$res[0]', '$res[1]')";
         mysqli_query($konek,$query);
     }
     return $res;
 }
 
-function kat_pendidikan($idtraining)
+function kat_nonpemerintah($idtraining)
 {
     include "koneksi.php";
 
@@ -127,7 +183,7 @@ function kat_pendidikan($idtraining)
     }
 
     foreach($res as $res) {
-        $query="INSERT INTO kategoripendidikan (id_datatraining, id_tbindex, keyword) VALUES ($idtraining, '$res[0]', '$res[1]')";
+        $query="INSERT INTO kategorinonpemerintah(id_datatraining, id_tbindex, keyword) VALUES ($idtraining, '$res[0]', '$res[1]')";
         mysqli_query($konek,$query);
     }
     return $res;
@@ -225,6 +281,50 @@ function buatindex($id) {
   		} //end while
 } //end function buatindex()
 
+//fungsi untuk membuat index
+function buatindextesting($id) {
+    include "koneksi.php";
+     //hapus index sebelumnya
+     // mysqli_query($konek,"TRUNCATE TABLE tbindex");
+
+     //ambil semua berita (teks)
+     $resBerita = mysqli_query($konek,"SELECT * FROM data_training WHERE id_training='$id'");
+     $num_rows = mysqli_num_rows($resBerita);
+     print("Mengindeks sebanyak " . $num_rows . " dokumen. <br />");
+
+     while($row = mysqli_fetch_array($resBerita)) {
+         $docId = $row['id_training'];
+         $berita = $row['text_proses'];
+         $id_kategori=$row['kategori'];
+
+           //simpan ke inverted index (tbindex)
+           $aberita = explode(" ", trim($berita));
+
+           foreach ($aberita as $j => $value) {
+             //hanya jika Term tidak null atau nil, tidak kosong
+             if ($aberita[$j] != "") {
+
+                 //berapa baris hasil yang dikembalikan query tersebut?
+                 $rescount = mysqli_query($konek,"SELECT Count FROM tbindex WHERE Term = '$aberita[$j]' AND DocId = $docId");
+                 $num_rows = mysqli_num_rows($rescount);
+
+                 //jika sudah ada DocId dan Term tersebut	, naikkan Count (+1)
+                 if ($num_rows > 0) {
+                     $rowcount = mysqli_fetch_array($rescount);
+                     $count = $rowcount['Count'];
+                     $count++;
+
+                     mysqli_query($konek,"UPDATE tbindex SET Count = $count WHERE Term = '$aberita[$j]' AND DocId = $docId");
+                 }
+                 //jika belum ada, langsung simpan ke tbindex
+                 else {
+                     mysqli_query($konek,"INSERT INTO tbindex (Term, DocId, kategori_id, Count) VALUES ('$aberita[$j]', $docId, $id_kategori, 1)");
+                 }
+             } //end if
+         } //end foreach
+       } //end while
+} //end function buatindex()
+
 function simpandata()
 {
         include "koneksi.php";
@@ -280,7 +380,7 @@ function hitung($table = "", $kondisi = "")
     return mysqli_num_rows(mysqli_query($db, "select * from $table $kondisi"));
 }
 
-function hitungbobotolahraga() {
+function hitungbobotpemerintah() {
 	include "koneksi.php";
 	//berapa jumlah DocId total?, n
 	$resn = mysqli_query($konek,"SELECT DISTINCT Id FROM tbindex");
@@ -314,7 +414,8 @@ function hitungbobotolahraga() {
         } //end while $rowbobot
     }
 } //end function hitungbobot
-function hitungbobotpendidikan() {
+
+function hitungbobotnonpemerintahan() {
 	include "koneksi.php";
 	//berapa jumlah DocId total?, n
 	$resn = mysqli_query($konek,"SELECT DISTINCT Id FROM tbindex");
@@ -349,74 +450,6 @@ function hitungbobotpendidikan() {
     }
 } //end function hitungbobot
 
-function hitungbobotteknologi() {
-	include "koneksi.php";
-	//berapa jumlah DocId total?, n
-	$resn = mysqli_query($konek,"SELECT DISTINCT Id FROM tbindex");
-	$n = mysqli_num_rows($resn);
-
-	//ambil setiap record dalam tabel tbindex
-    //hitung bobot untuk setiap Term dalam setiap DocId
-    $query="SELECT * FROM tbindex WHERE kategori_id='3' ORDER BY Id";
-    if (!mysqli_query($konek,$query)) {
-        echo("Error description: " . mysqli_error($konek));
-    }
-    else{
-        $resBobot = mysqli_query($konek,$query);
-        $num_rows = mysqli_num_rows($resBobot);
-        print("Terdapat " . $num_rows . " Term yang diberikan bobot. <br />");
-        while($rowbobot = mysqli_fetch_array($resBobot)) {
-            //$w = tf * log (n/N)
-        	$term = $rowbobot['Term'];
-        	$tf = $rowbobot['Count'];
-        	$id = $rowbobot['Id'];
-
-        	//berapa jumlah dokumen yang mengandung term tersebut?, N
-        	$resNTerm = mysqli_query($konek,"SELECT Count(*) as N FROM tbindex WHERE Term = '$term' AND kategori_id='3'");
-        	$rowNTerm = mysqli_fetch_array($resNTerm);
-        	$NTerm = $rowNTerm['N'];
-
-        	$w = $tf * log($n/$NTerm);
-
-        	//update bobot dari term tersebut
-        	$resUpdateBobot = mysqli_query($konek,"UPDATE tbindex SET Bobot = $w WHERE Id = $id");
-        } //end while $rowbobot
-    }
-} //end function hitungbobot
-function hitungbobotpemerintahan() {
-	include "koneksi.php";
-	//berapa jumlah DocId total?, n
-	$resn = mysqli_query($konek,"SELECT DISTINCT Id FROM tbindex");
-	$n = mysqli_num_rows($resn);
-
-	//ambil setiap record dalam tabel tbindex
-    //hitung bobot untuk setiap Term dalam setiap DocId
-    $query="SELECT * FROM tbindex WHERE kategori_id='4' ORDER BY Id";
-    if (!mysqli_query($konek,$query)) {
-        echo("Error description: " . mysqli_error($konek));
-    }
-    else{
-        $resBobot = mysqli_query($konek,$query);
-        $num_rows = mysqli_num_rows($resBobot);
-        print("Terdapat " . $num_rows . " Term yang diberikan bobot. <br />");
-        while($rowbobot = mysqli_fetch_array($resBobot)) {
-            //$w = tf * log (n/N)
-        	$term = $rowbobot['Term'];
-        	$tf = $rowbobot['Count'];
-        	$id = $rowbobot['Id'];
-
-        	//berapa jumlah dokumen yang mengandung term tersebut?, N
-        	$resNTerm = mysqli_query($konek,"SELECT Count(*) as N FROM tbindex WHERE Term = '$term' AND kategori_id='4'");
-        	$rowNTerm = mysqli_fetch_array($resNTerm);
-        	$NTerm = $rowNTerm['N'];
-
-        	$w = $tf * log($n/$NTerm);
-
-        	//update bobot dari term tersebut
-        	$resUpdateBobot = mysqli_query($konek,"UPDATE tbindex SET Bobot = $w WHERE Id = $id");
-        } //end while $rowbobot
-    }
-} //end function hitungbobot
 // function delete_data($table = "", $kondisi = "")
 // {
 //     global $db;

@@ -54,7 +54,7 @@
                     </div>
                     <div class="card-footer">
                         <div class="stats ">
-                            <h2 class="card-title text-right ">Akurasi <?php echo hitung("data_test") != 0 ? akurasi() : "0" ?>%</h2>
+                            <h2 class="card-title text-right ">Akurasi <?php //echo hitung("data_test") != 0 ? akurasi() : "0" ?>%</h2>
                         </div>
                     </div>
                 </div>
@@ -161,27 +161,47 @@ include("modals.php");
 //     echo $input_data == true ? "<script>$(document).ready(function(){ success('Insert') });</script>" : "<script>$(document).ready(function(){ gagal('Insert')}); </script>";
 // }
 if (isset($_POST['uploadTest'])) {
-    $filename = $_FILES["file"]["tmp_name"];
-    if ($_FILES["file"]["size"] > 0) {
-        $file = fopen($filename, "r");
-        while (($getData = fgetcsv($file, 10000, ";")) !== FALSE) {
+    // $filename = $_FILES["file"]["tmp_name"];
+    // if ($_FILES["file"]["size"] > 0) {
+    //     $file = fopen($filename, "r");
+    //     while (($getData = fgetcsv($file, 10000, ";")) !== FALSE) {
             
-                $proses_text = processing($getData[0]);
-                if($proses_text != ""){
-                $kategori = bayes($proses_text);    
-                }
+    //             $proses_text = processing($getData[0]);
+    //             if($proses_text != ""){
+    //             $kategori = bayes($proses_text);    
+    //             }
                 
-                $arraytopost = [
-                    'kontent' => $getData[0],
-                    'text_pro' => $proses_text,
-                    'kategori' => $kategori,
-                    'aktual' => $getData[1],
-                ];
-                $input_data = upload("data_test", $arraytopost);
+    //             $arraytopost = [
+    //                 'kontent' => $getData[0],
+    //                 'text_pro' => $proses_text,
+    //                 'kategori' => $kategori,
+    //                 'aktual' => $getData[1],
+    //             ];
+    //             $input_data = upload("data_test", $arraytopost);
         
-        }
-        echo $input_data == true ? "<script>$(document).ready(function(){ success('Upload') });</script>" : "<script>$(document).ready(function(){ gagal('Upload')});</script>";
-    }
+    //     }
+    //     echo $input_data == true ? "<script>$(document).ready(function(){ success('Upload') });</script>" : "<script>$(document).ready(function(){ gagal('Upload')});</script>";
+    // }
+
+    $proses_text = processing($_POST['isi']);
+    $arraytopost = [
+        'kontent' => $_POST['isi'],
+        'text_pro' => $proses_text
+    ];
+    $input_data = upload("data_training", $arraytopost);
+    // $last_id=lastid("data_training",$_POST['kategori']);
+    buatindextesting(lastidtesting("id_training","data_training"));
+    // if($_POST['kategori']==1){
+    //     kat_pemerintah(lastid("id_training","data_training",$_POST['kategori']));
+    //     hitungbobotpemerintah();
+    // }
+    // if($_POST['kategori']==2){
+    //     kat_nonpemerintah(lastid("id_training","data_training",$_POST['kategori']));
+    //     hitungbobotnonpemerintahan();
+    // }
+    // echo $_POST['isi'];
+    
+    echo $input_data == true ? "<script>$(document).ready(function(){ success('Upload') });</script>" : "<script>$(document).ready(function(){ gagal('Upload')});</script>";
 }
 // if (isset($_POST['insertTraining'])) {
 //     $input_data = input("data_training", $_POST);
@@ -214,20 +234,12 @@ if (isset($_POST['uploadTraining'])) {
     // $last_id=lastid("data_training",$_POST['kategori']);
     buatindex(lastid("id_training","data_training",$_POST['kategori']));
     if($_POST['kategori']==1){
-        kat_olahraga(lastid("id_training","data_training",$_POST['kategori']));
-        hitungbobotolahraga();
+        kat_pemerintah(lastid("id_training","data_training",$_POST['kategori']));
+        hitungbobotpemerintah();
     }
     if($_POST['kategori']==2){
-        kat_pendidikan(lastid("id_training","data_training",$_POST['kategori']));
-        hitungbobotpendidikan();
-    }
-    if($_POST['kategori']==3){
-        kat_teknologi(lastid("id_training","data_training",$_POST['kategori']));
-        hitungbobotteknologi();
-    }
-    if($_POST['kategori']==4){
-        kat_pemerintahan(lastid("id_training","data_training",$_POST['kategori']));
-        hitungbobotpemerintahan();
+        kat_nonpemerintah(lastid("id_training","data_training",$_POST['kategori']));
+        hitungbobotnonpemerintahan();
     }
     // echo $_POST['isi'];
     

@@ -20,7 +20,7 @@
                         echo "<td>" . $key['id_test'] . "</td>";
                         echo "<td>" . $key['konten'] . "</td>";
                         echo "<td>" . $key['text_proses'] . "</td>";
-                        echo "<td>" . $key['kategori_aktual'] . "</td>";
+                        // echo "<td>" . $key['kategori_aktual'] . "</td>";
                         echo "<td>" . $key['kategori'] . "</td>";
                         // echo '<td>
                         //     <a href="#" data-id="' . $key['id_test'] . '" data-table="data_test" data-toggle="modal" data-target="#edit_data" class="btn btn-info btn-sm"><i class="material-icons">edit</i></a>
@@ -64,14 +64,6 @@
                         if($key['kategori']==2){
                             $sql="INNER JOIN `data_training` ON kategoripendidikan.id_datatraining=data_training.id_training WHERE id_datatraining=".$key['id_training']."";
                             $data_keyword = getrow("kategoripendidikan",$sql);
-                        }
-                        if($key['kategori']==3){
-                            $sql="INNER JOIN `data_training` ON kategoriteknologi.id_datatraining=data_training.id_training WHERE id_datatraining=".$key['id_training']."";
-                            $data_keyword = getrow("kategoriteknologi",$sql);
-                        }
-                        if($key['kategori']==4){
-                            $sql="INNER JOIN `data_training` ON kategoripemerintahan.id_datatraining=data_training.id_training WHERE id_datatraining=".$key['id_training']."";
-                            $data_keyword = getrow("kategoripemerintahan",$sql);
                         }
                         echo "<td>";
                         foreach ($data_keyword as $keyword) {
