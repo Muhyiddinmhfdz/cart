@@ -27,7 +27,19 @@
                         //     <a id="delete" href="?delete_test=' . $key['id_test'] . '" class="btn btn-danger btn-sm"><i class="material-icons">delete_forever</i></a>
                         //   </td>';
                         // echo "</tr>";
-                        
+                        $idd=$key['id_test'];
+                        // echo '<td>
+                        //     <form method="POST" enctype="multipart/form-data" style="margin-top:24px;">
+                        //         <input  name="id" type="hidden" value="'.$idd.'">
+                        //         <button name="resultfinal" value="'.$idd.'" type="submit" class="btn btn-success pull-right" style="bottom:0;margin-top:36px;">Submit</button>
+                        //     </form>
+                        // </td>';
+                        echo '<td>
+                           
+                                <a type="button" class="btn btn-success" style="bottom:0;margin-top:36px;" onclick="jajal('.$idd.');">Submit</button>
+                           
+                        </td>';
+                        echo "</tr>";
                     }
                 
                 }

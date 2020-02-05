@@ -137,6 +137,29 @@ include("modals.php");
             });
         });
     });
+
+    
+ function jajal(id)
+ {
+    jQuery.ajax({
+        type: "POST",
+        url: 'system/function.php',
+        dataType: 'json',
+        data: {functionname: 'check', arguments: [id]},
+
+        success: function (obj, textstatus) {
+                    if( !('error' in obj) ) {
+                        yourVariable = obj.result;
+                    }
+                    else {
+                        console.log(obj.error);
+                    }
+                    // console.log(obj.result.final);
+                    alert(obj.result.final);
+                }
+    });
+ }
+
 </script>
 
 
@@ -266,4 +289,53 @@ if (isset($_POST['uploadTraining'])) {
 //     $editTraining = edit_data("data_training", $_POST, $kondisi);
 //     echo $editTraining == true ? "<script>$(document).ready(function(){ success('Edit') });</script>" : "<script>$(document).ready(function(){ gagal('Edit')});</script>";
 // }
+// if (isset($_POST['resultfinal'])) {
+
+//     $res=check($_POST['id']);
+//     echo var_dump($res);
+//     // $filename = $_FILES["file"]["tmp_name"];
+//     // if ($_FILES["file"]["size"] > 0) {
+//     //     $file = fopen($filename, "r");
+//     //     while (($getData = fgetcsv($file, 10000, ";")) !== FALSE) {
+            
+//     //             $proses_text = processing($getData[0]);
+//     //             if($proses_text != ""){
+//     //             $kategori = bayes($proses_text);    
+//     //             }
+                
+//     //             $arraytopost = [
+//     //                 'kontent' => $getData[0],
+//     //                 'text_pro' => $proses_text,
+//     //                 'kategori' => $kategori,
+//     //                 'aktual' => $getData[1],
+//     //             ];
+//     //             $input_data = upload("data_test", $arraytopost);
+        
+//     //     }
+//         // echo $input_data == true ? "<script>$(document).ready(function(){ success('Upload') });</script>" : "<script>$(document).ready(function(){ gagal('Upload')});</script>";
+//     // }
+
+//     // $proses_text = processing($_POST['isi']);
+//     // $arraytopost = [
+//     //     'konten' => $_POST['isi'],
+//     //     'text_proses' => $proses_text,
+//     //     'kategori'=>NULL
+//     // ];
+//     // $input_data = upload("data_test", $arraytopost);
+//     // // $last_id=lastid("data_training",$_POST['kategori']);
+//     // buatindextesting(lastidtesting("id_test","data_test"));
+//     // // if($_POST['kategori']==1){
+//     // //     kat_pemerintah(lastid("id_training","data_training",$_POST['kategori']));
+//     // //     hitungbobotpemerintah();
+//     // // }
+//     // // if($_POST['kategori']==2){
+//     // //     kat_nonpemerintah(lastid("id_training","data_training",$_POST['kategori']));
+//     // //     hitungbobotnonpemerintahan();
+//     // // }
+//     // // echo var_dump($arraytopost);
+    
+//     // echo $input_data == true ? "<script>$(document).ready(function(){ success('Upload') });</script>" : "<script>$(document).ready(function(){ gagal('Upload')});</script>";
+// }
+
+
 ?>

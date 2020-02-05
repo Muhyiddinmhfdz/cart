@@ -6,6 +6,35 @@ if($_GET){
      }
 }
 
+$aResult = array();
+if(!empty($_POST['functionname'])){
+    if( !isset($_POST['functionname']) ) { $aResult['error'] = 'No function name!'; }
+
+    if( !isset($_POST['arguments']) ) { $aResult['error'] = 'No function arguments!'; }
+
+    if( !isset($aResult['error']) ) {
+
+        switch($_POST['functionname']) {
+            case 'check':
+            if( !is_array($_POST['arguments']) || (count($_POST['arguments']) < 1) ) {
+                $aResult['error'] = 'Error in arguments!';
+            }
+            else {
+                $aResult['result'] = check($_POST['arguments'][0]);
+            }
+            break;
+
+            default:
+            $aResult['error'] = 'Not found function '.$_POST['functionname'].'!';
+            break;
+        }
+
+    }
+
+    echo json_encode($aResult);
+}
+    
+
 //---------------------------- Bayes Libs - PHP AI
 require_once __DIR__ . '/../vendor/autoload.php';
 
@@ -378,16 +407,17 @@ function count_dataset($where=NULL)
     }
 }
 
-function check()
+function check($documentid)
 {
+    // $documentid=$_POST['idval'];
     $countdataset=count_dataset();//hitung jumlah dataset seluruhnya
     $countdatasetpemerintahan=count_dataset("kategori='1'"); //hitung jumlah dataset pemerintahan
     $countdatasetnonpemerintahan=count_dataset("kategori='2'");//hitung jumlah dataset nonpemerintahan
-    $katatesting=count_f("tbindextesting","DocId='3'"); //docid //hitung jumlah term dari dokumen yang ditesting
+    $katatesting=count_f("tbindextesting","DocId='$documentid'"); //docid //hitung jumlah term dari dokumen yang ditesting
     $katatrainingpemerintahan=count_f("kategoripemerintahan"); //hitung jumlah term training pemerintahan
     $katatrainingnonpemerintahan=count_f("kategorinonpemerintahan"); //hitung jumlah term training nonpemerintahan
 
-    $datatesting=getindextesting("3"); //docID
+    $datatesting=getindextesting("$documentid"); //docID
     $datatrainingpemerintahan=getindextraining("1","kategoripemerintahan","tbindex"); //kategori
     $datatrainingnonpemerintahan=getindextraining("2","kategorinonpemerintahan","tbindex");
 
@@ -424,30 +454,45 @@ function check()
     $trainingnonpemerintahan=$countnonpemerintahan/$katatesting;
     $respemerintahan=$nilai_kategori_pemerintah-$trainingpemerintahan;
     $resnonpemerintahan=$nilai_kategori_nonpemerintah-$trainingnonpemerintahan;
-
+    $final;
     // echo $countpemerintahan."/".$countnonpemerintahan;
-    echo "==== JUMLAH DATA ====<br>";
-    echo "Jumlah Dataset= ".$countdataset."<br>";
-    echo "Dataset Kategori Pemerintahan= ".$countdatasetpemerintahan."<br>";
-    echo "Dataset Kategori NonPemerintahan= ".$countdatasetnonpemerintahan."<br>";
-    echo "==== NILAI KATEGORI ====<br>";
-    echo "Kategori Pemerintahan= ".$nilai_kategori_pemerintah."<br>";
-    echo "Kategori NonPemerintahan= ".$nilai_kategori_nonpemerintah."<br>";
-    echo "==== NILAI TRAINING ====<br>";
-    echo "Kategori Pemerintahan= ".$trainingpemerintahan."<br>";
-    echo "Kategori NonPemerintahan= ".$trainingnonpemerintahan."<br>";
-    echo "==== HASIL ====<br>";
-    echo "Kategori Pemerintahan= ".$respemerintahan."<br>";
-    echo "Kategori NonPemerintahan= ".$resnonpemerintahan."<br>";
-    echo "==== HASIL AKHIR ====<br>";
+    // echo "==== JUMLAH DATA ====<br>";
+    // echo "Jumlah Dataset= ".$countdataset."<br>";
+    // echo "Dataset Kategori Pemerintahan= ".$countdatasetpemerintahan."<br>";
+    // echo "Dataset Kategori NonPemerintahan= ".$countdatasetnonpemerintahan."<br>";
+    // echo "==== NILAI KATEGORI ====<br>";
+    // echo "Kategori Pemerintahan= ".$nilai_kategori_pemerintah."<br>";
+    // echo "Kategori NonPemerintahan= ".$nilai_kategori_nonpemerintah."<br>";
+    // echo "==== NILAI TRAINING ====<br>";
+    // echo "Kategori Pemerintahan= ".$trainingpemerintahan."<br>";
+    // echo "Kategori NonPemerintahan= ".$trainingnonpemerintahan."<br>";
+    // echo "==== HASIL ====<br>";
+    // echo "Kategori Pemerintahan= ".$respemerintahan."<br>";
+    // echo "Kategori NonPemerintahan= ".$resnonpemerintahan."<br>";
+    // echo "==== HASIL AKHIR ====<br>";
     if($respemerintahan<$resnonpemerintahan)
     {
-        echo "PEMERINTAHAN";
+        // echo "PEMERINTAHAN";
+        $final="PEMERINTAHAN";
     }
     else{
-        echo "NON-PEMERINTAHAN";
+        // echo "NON-PEMERINTAHAN";
+        $final="NON-PEMERINTAHAN";
     }
 
+    $dataresult=array(
+        'countdataset'=>$countdataset,
+        'countdatasetpemerintahan'=>$countdatasetpemerintahan,
+        'countdatasetnonpemerintahan'=>$countdatasetnonpemerintahan,
+        'nilai_kategori_pemerintah'=>$nilai_kategori_pemerintah,
+        'nilai_kategori_nonpemerintah'=>$nilai_kategori_nonpemerintah,
+        'trainingpemerintahan'=>$trainingpemerintahan,
+        'trainingnonpemerintahan'=>$trainingnonpemerintahan,
+        'respemerintahan'=>$respemerintahan,
+        'resnonpemerintahan'=>$resnonpemerintahan,
+        'final'=>$final
+    );
+    return $dataresult;
 }
 
 

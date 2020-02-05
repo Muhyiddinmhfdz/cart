@@ -322,6 +322,10 @@
                 window.location.href = "index.php";
             });
     }
+    function NewTab(id) { 
+            window.open( 
+              "https://www.geeksforgeeks.org/"+id, "_blank"); 
+        } 
 </script>
 </body>
 
